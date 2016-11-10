@@ -21,6 +21,4 @@ int main()
  int resultado = funcion(1,2,3,4,5,6,7);
 	//printf ("resultado: %d\n",resultado);
 	return 0;
-
 	}
-
