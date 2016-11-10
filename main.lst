@@ -1,0 +1,2467 @@
+
+main.elf:     file format elf32-or32
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .vectors      00002000  00000000  00000000  00002000  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .init         00000028  00002000  00002000  00004000  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .text         00001f9c  00002028  00002028  00004028  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .fini         0000001c  00003fc4  00003fc4  00005fc4  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .rodata       00000006  00003fe0  00003fe0  00005fe0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .eh_frame     00000004  00003fe8  00003fe8  00005fe8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .ctors        00000008  00005fec  00005fec  00005fec  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .dtors        00000008  00005ff4  00005ff4  00005ff4  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .jcr          00000004  00005ffc  00005ffc  00005ffc  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .data         000009b8  00006000  00006000  00006000  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .bss          00000058  000069b8  000069b8  000069b8  2**2
+                  ALLOC
+ 11 .comment      00000051  00000000  00000000  000069b8  2**0
+                  CONTENTS, READONLY
+ 12 .debug_aranges 000001a0  00000000  00000000  00006a09  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_pubnames 00000309  00000000  00000000  00006ba9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_info   00006af2  00000000  00000000  00006eb2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_abbrev 0000133c  00000000  00000000  0000d9a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_line   0000228e  00000000  00000000  0000ece0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .debug_frame  00000418  00000000  00000000  00010f70  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .debug_str    00000aeb  00000000  00000000  00011388  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 19 .debug_loc    00001657  00000000  00000000  00011e73  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 20 .debug_pubtypes 0000098b  00000000  00000000  000134ca  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 21 .debug_ranges 00000088  00000000  00000000  00013e55  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .vectors:
+
+00000000 <__reset-0x100>:
+	...
+
+00000100 <__reset>:
+     100:	18 00 00 00 	l.movhi r0,0x0
+     104:	18 20 00 00 	l.movhi r1,0x0
+     108:	18 40 00 00 	l.movhi r2,0x0
+     10c:	18 60 00 00 	l.movhi r3,0x0
+     110:	18 80 00 00 	l.movhi r4,0x0
+     114:	18 a0 00 00 	l.movhi r5,0x0
+     118:	18 c0 00 00 	l.movhi r6,0x0
+     11c:	18 e0 00 00 	l.movhi r7,0x0
+     120:	19 00 00 00 	l.movhi r8,0x0
+     124:	19 20 00 00 	l.movhi r9,0x0
+     128:	19 40 00 00 	l.movhi r10,0x0
+     12c:	19 60 00 00 	l.movhi r11,0x0
+     130:	19 80 00 00 	l.movhi r12,0x0
+     134:	19 a0 00 00 	l.movhi r13,0x0
+     138:	19 c0 00 00 	l.movhi r14,0x0
+     13c:	19 e0 00 00 	l.movhi r15,0x0
+     140:	1a 00 00 00 	l.movhi r16,0x0
+     144:	1a 20 00 00 	l.movhi r17,0x0
+     148:	1a 40 00 00 	l.movhi r18,0x0
+     14c:	1a 60 00 00 	l.movhi r19,0x0
+     150:	1a 80 00 00 	l.movhi r20,0x0
+     154:	1a a0 00 00 	l.movhi r21,0x0
+     158:	1a c0 00 00 	l.movhi r22,0x0
+     15c:	1a e0 00 00 	l.movhi r23,0x0
+     160:	1b 00 00 00 	l.movhi r24,0x0
+     164:	1b 20 00 00 	l.movhi r25,0x0
+     168:	1b 40 00 00 	l.movhi r26,0x0
+     16c:	1b 60 00 00 	l.movhi r27,0x0
+     170:	1b 80 00 00 	l.movhi r28,0x0
+     174:	1b a0 00 00 	l.movhi r29,0x0
+     178:	1b c0 00 00 	l.movhi r30,0x0
+     17c:	1b e0 00 00 	l.movhi r31,0x0
+     180:	a8 20 00 01 	l.ori r1,r0,0x1
+     184:	c0 00 08 11 	l.mtspr r0,r1,0x11
+     188:	c1 40 00 00 	l.mtspr r0,r0,0x5000
+     18c:	18 80 00 00 	l.movhi r4,0x0
+     190:	a8 84 20 28 	l.ori r4,r4,0x2028
+     194:	44 00 20 00 	l.jr r4
+     198:	15 00 00 00 	l.nop 0x0
+	...
+     200:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     204:	d4 01 18 04 	l.sw 0x4(r1),r3
+     208:	d4 01 20 08 	l.sw 0x8(r1),r4
+     20c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     210:	00 00 0b 9e 	l.j 3088 <or1k_exception_handler>
+     214:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     300:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     304:	d4 01 18 04 	l.sw 0x4(r1),r3
+     308:	d4 01 20 08 	l.sw 0x8(r1),r4
+     30c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     310:	00 00 0b 5e 	l.j 3088 <or1k_exception_handler>
+     314:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     400:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     404:	d4 01 18 04 	l.sw 0x4(r1),r3
+     408:	d4 01 20 08 	l.sw 0x8(r1),r4
+     40c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     410:	00 00 0b 1e 	l.j 3088 <or1k_exception_handler>
+     414:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     500:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     504:	d4 01 18 04 	l.sw 0x4(r1),r3
+     508:	d4 01 20 08 	l.sw 0x8(r1),r4
+     50c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     510:	00 00 0a de 	l.j 3088 <or1k_exception_handler>
+     514:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     600:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     604:	d4 01 18 04 	l.sw 0x4(r1),r3
+     608:	d4 01 20 08 	l.sw 0x8(r1),r4
+     60c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     610:	00 00 0a 9e 	l.j 3088 <or1k_exception_handler>
+     614:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     700:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     704:	d4 01 18 04 	l.sw 0x4(r1),r3
+     708:	d4 01 20 08 	l.sw 0x8(r1),r4
+     70c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     710:	00 00 0a 5e 	l.j 3088 <or1k_exception_handler>
+     714:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     800:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     804:	d4 01 18 04 	l.sw 0x4(r1),r3
+     808:	d4 01 20 08 	l.sw 0x8(r1),r4
+     80c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     810:	00 00 0a 1e 	l.j 3088 <or1k_exception_handler>
+     814:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     900:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     904:	d4 01 18 04 	l.sw 0x4(r1),r3
+     908:	d4 01 20 08 	l.sw 0x8(r1),r4
+     90c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     910:	00 00 09 de 	l.j 3088 <or1k_exception_handler>
+     914:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     a00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     a04:	d4 01 18 04 	l.sw 0x4(r1),r3
+     a08:	d4 01 20 08 	l.sw 0x8(r1),r4
+     a0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     a10:	00 00 09 9e 	l.j 3088 <or1k_exception_handler>
+     a14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     b00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     b04:	d4 01 18 04 	l.sw 0x4(r1),r3
+     b08:	d4 01 20 08 	l.sw 0x8(r1),r4
+     b0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     b10:	00 00 09 5e 	l.j 3088 <or1k_exception_handler>
+     b14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     c00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     c04:	d4 01 18 04 	l.sw 0x4(r1),r3
+     c08:	d4 01 20 08 	l.sw 0x8(r1),r4
+     c0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     c10:	00 00 09 1e 	l.j 3088 <or1k_exception_handler>
+     c14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     d00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     d04:	d4 01 18 04 	l.sw 0x4(r1),r3
+     d08:	d4 01 20 08 	l.sw 0x8(r1),r4
+     d0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     d10:	00 00 08 de 	l.j 3088 <or1k_exception_handler>
+     d14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     e00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     e04:	d4 01 18 04 	l.sw 0x4(r1),r3
+     e08:	d4 01 20 08 	l.sw 0x8(r1),r4
+     e0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     e10:	00 00 08 9e 	l.j 3088 <or1k_exception_handler>
+     e14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+     f00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+     f04:	d4 01 18 04 	l.sw 0x4(r1),r3
+     f08:	d4 01 20 08 	l.sw 0x8(r1),r4
+     f0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+     f10:	00 00 08 5e 	l.j 3088 <or1k_exception_handler>
+     f14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1000:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1004:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1008:	d4 01 20 08 	l.sw 0x8(r1),r4
+    100c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1010:	00 00 08 1e 	l.j 3088 <or1k_exception_handler>
+    1014:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1100:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1104:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1108:	d4 01 20 08 	l.sw 0x8(r1),r4
+    110c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1110:	00 00 07 de 	l.j 3088 <or1k_exception_handler>
+    1114:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1200:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1204:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1208:	d4 01 20 08 	l.sw 0x8(r1),r4
+    120c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1210:	00 00 07 9e 	l.j 3088 <or1k_exception_handler>
+    1214:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1300:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1304:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1308:	d4 01 20 08 	l.sw 0x8(r1),r4
+    130c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1310:	00 00 07 5e 	l.j 3088 <or1k_exception_handler>
+    1314:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1400:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1404:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1408:	d4 01 20 08 	l.sw 0x8(r1),r4
+    140c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1410:	00 00 07 1e 	l.j 3088 <or1k_exception_handler>
+    1414:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1500:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1504:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1508:	d4 01 20 08 	l.sw 0x8(r1),r4
+    150c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1510:	00 00 06 de 	l.j 3088 <or1k_exception_handler>
+    1514:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1600:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1604:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1608:	d4 01 20 08 	l.sw 0x8(r1),r4
+    160c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1610:	00 00 06 9e 	l.j 3088 <or1k_exception_handler>
+    1614:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1700:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1704:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1708:	d4 01 20 08 	l.sw 0x8(r1),r4
+    170c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1710:	00 00 06 5e 	l.j 3088 <or1k_exception_handler>
+    1714:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1800:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1804:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1808:	d4 01 20 08 	l.sw 0x8(r1),r4
+    180c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1810:	00 00 06 1e 	l.j 3088 <or1k_exception_handler>
+    1814:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1900:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1904:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1908:	d4 01 20 08 	l.sw 0x8(r1),r4
+    190c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1910:	00 00 05 de 	l.j 3088 <or1k_exception_handler>
+    1914:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1a00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1a04:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1a08:	d4 01 20 08 	l.sw 0x8(r1),r4
+    1a0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1a10:	00 00 05 9e 	l.j 3088 <or1k_exception_handler>
+    1a14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1b00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1b04:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1b08:	d4 01 20 08 	l.sw 0x8(r1),r4
+    1b0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1b10:	00 00 05 5e 	l.j 3088 <or1k_exception_handler>
+    1b14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1c00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1c04:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1c08:	d4 01 20 08 	l.sw 0x8(r1),r4
+    1c0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1c10:	00 00 05 1e 	l.j 3088 <or1k_exception_handler>
+    1c14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1d00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1d04:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1d08:	d4 01 20 08 	l.sw 0x8(r1),r4
+    1d0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1d10:	00 00 04 de 	l.j 3088 <or1k_exception_handler>
+    1d14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1e00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1e04:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1e08:	d4 01 20 08 	l.sw 0x8(r1),r4
+    1e0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1e10:	00 00 04 9e 	l.j 3088 <or1k_exception_handler>
+    1e14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1f00:	9c 21 ff 80 	l.addi r1,r1,0xffffff80
+    1f04:	d4 01 18 04 	l.sw 0x4(r1),r3
+    1f08:	d4 01 20 08 	l.sw 0x8(r1),r4
+    1f0c:	b4 60 00 10 	l.mfspr r3,r0,0x10
+    1f10:	00 00 04 5e 	l.j 3088 <or1k_exception_handler>
+    1f14:	b4 80 00 20 	l.mfspr r4,r0,0x20
+	...
+    1ffc:	15 00 00 00 	l.nop 0x0
+
+Disassembly of section .init:
+
+00002000 <__init-0x4>:
+    2000:	15 00 00 00 	l.nop 0x0
+
+00002004 <__init>:
+    2004:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    2008:	d4 01 48 00 	l.sw 0x0(r1),r9
+    200c:	04 00 00 6c 	l.jal 21bc <frame_dummy>
+    2010:	15 00 00 00 	l.nop 0x0
+    2014:	04 00 07 d3 	l.jal 3f60 <__do_global_ctors_aux>
+    2018:	15 00 00 00 	l.nop 0x0
+    201c:	85 21 00 00 	l.lwz r9,0x0(r1)
+    2020:	44 00 48 00 	l.jr r9
+    2024:	9c 21 00 04 	l.addi r1,r1,0x4
+
+Disassembly of section .text:
+
+00002028 <_start>:
+    2028:	18 20 00 00 	l.movhi r1,0x0
+    202c:	a8 21 3e 4c 	l.ori r1,r1,0x3e4c
+    2030:	84 21 00 00 	l.lwz r1,0x0(r1)
+    2034:	18 40 00 00 	l.movhi r2,0x0
+    2038:	a8 42 3e 50 	l.ori r2,r2,0x3e50
+    203c:	84 42 00 00 	l.lwz r2,0x0(r2)
+    2040:	e0 21 10 00 	l.add r1,r1,r2
+    2044:	e0 41 08 04 	l.or r2,r1,r1
+    2048:	18 60 00 00 	l.movhi r3,0x0
+    204c:	a8 63 60 00 	l.ori r3,r3,0x6000
+    2050:	d4 03 08 00 	l.sw 0x0(r3),r1
+    2054:	04 00 03 5e 	l.jal 2dcc <or1k_cache_init>
+    2058:	15 00 00 00 	l.nop 0x0
+    205c:	18 60 00 00 	l.movhi r3,0x0
+    2060:	a8 63 69 b8 	l.ori r3,r3,0x69b8
+    2064:	18 80 00 00 	l.movhi r4,0x0
+    2068:	a8 84 6a 10 	l.ori r4,r4,0x6a10
+    206c:	d4 03 00 00 	l.sw 0x0(r3),r0
+    2070:	e4 83 20 00 	l.sfltu r3,r4
+    2074:	13 ff ff fe 	l.bf 206c <_start+0x44>
+    2078:	9c 63 00 04 	l.addi r3,r3,0x4
+    207c:	07 ff ff e2 	l.jal 2004 <__init>
+    2080:	15 00 00 00 	l.nop 0x0
+    2084:	18 60 00 00 	l.movhi r3,0x0
+    2088:	04 00 00 b3 	l.jal 2354 <atexit>
+    208c:	a8 63 3f c4 	l.ori r3,r3,0x3fc4
+    2090:	18 80 00 00 	l.movhi r4,0x0
+    2094:	a8 84 3e 58 	l.ori r4,r4,0x3e58
+    2098:	84 84 00 00 	l.lwz r4,0x0(r4)
+    209c:	e4 24 00 00 	l.sfne r4,r0
+    20a0:	0c 00 00 04 	l.bnf 20b0 <_start+0x88>
+    20a4:	e0 60 00 04 	l.or r3,r0,r0
+    20a8:	04 00 07 18 	l.jal 3d08 <__uart_init>
+    20ac:	15 00 00 00 	l.nop 0x0
+    20b0:	e0 60 00 04 	l.or r3,r0,r0
+    20b4:	e0 80 00 04 	l.or r4,r0,r0
+    20b8:	04 00 00 91 	l.jal 22fc <main>
+    20bc:	e0 a0 00 04 	l.or r5,r0,r0
+    20c0:	04 00 00 ae 	l.jal 2378 <exit>
+    20c4:	9c 6b 00 00 	l.addi r3,r11,0x0
+    20c8:	00 00 00 00 	l.j 20c8 <_start+0xa0>
+    20cc:	15 00 00 00 	l.nop 0x0
+
+000020d0 <__do_global_dtors_aux>:
+    20d0:	d7 e1 87 f8 	l.sw 0xfffffff8(r1),r16
+    20d4:	1a 00 00 00 	l.movhi r16,0x0
+    20d8:	d7 e1 17 f0 	l.sw 0xfffffff0(r1),r2
+    20dc:	aa 10 69 b8 	l.ori r16,r16,0x69b8
+    20e0:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    20e4:	8c 50 00 00 	l.lbz r2,0x0(r16)
+    20e8:	d7 e1 77 f4 	l.sw 0xfffffff4(r1),r14
+    20ec:	bc 22 00 00 	l.sfnei r2,0x0
+    20f0:	10 00 00 27 	l.bf 218c <__do_global_dtors_aux+0xbc>
+    20f4:	9c 21 ff f0 	l.addi r1,r1,0xfffffff0
+    20f8:	19 c0 00 00 	l.movhi r14,0x0
+    20fc:	18 80 00 00 	l.movhi r4,0x0
+    2100:	a9 ce 5f f8 	l.ori r14,r14,0x5ff8
+    2104:	a8 84 5f f4 	l.ori r4,r4,0x5ff4
+    2108:	18 40 00 00 	l.movhi r2,0x0
+    210c:	e1 ce 20 02 	l.sub r14,r14,r4
+    2110:	a8 42 69 bc 	l.ori r2,r2,0x69bc
+    2114:	b9 ce 00 82 	l.srai r14,r14,0x2
+    2118:	84 62 00 00 	l.lwz r3,0x0(r2)
+    211c:	9d ce ff ff 	l.addi r14,r14,0xffffffff
+    2120:	e4 63 70 00 	l.sfgeu r3,r14
+    2124:	10 00 00 10 	l.bf 2164 <__do_global_dtors_aux+0x94>
+    2128:	15 00 00 00 	l.nop 0x0
+    212c:	9c 63 00 01 	l.addi r3,r3,0x1
+    2130:	18 a0 00 00 	l.movhi r5,0x0
+    2134:	b8 83 00 02 	l.slli r4,r3,0x2
+    2138:	a8 a5 5f f4 	l.ori r5,r5,0x5ff4
+    213c:	d4 02 18 00 	l.sw 0x0(r2),r3
+    2140:	e0 64 28 00 	l.add r3,r4,r5
+    2144:	84 63 00 00 	l.lwz r3,0x0(r3)
+    2148:	48 00 18 00 	l.jalr r3
+    214c:	15 00 00 00 	l.nop 0x0
+    2150:	84 62 00 00 	l.lwz r3,0x0(r2)
+    2154:	e4 83 70 00 	l.sfltu r3,r14
+    2158:	13 ff ff f6 	l.bf 2130 <__do_global_dtors_aux+0x60>
+    215c:	9c 63 00 01 	l.addi r3,r3,0x1
+    2160:	9c 63 ff ff 	l.addi r3,r3,0xffffffff
+    2164:	18 40 00 00 	l.movhi r2,0x0
+    2168:	a8 42 00 00 	l.ori r2,r2,0x0
+    216c:	bc 02 00 00 	l.sfeqi r2,0x0
+    2170:	10 00 00 06 	l.bf 2188 <__do_global_dtors_aux+0xb8>
+    2174:	9c 40 00 01 	l.addi r2,r0,0x1
+    2178:	18 60 00 00 	l.movhi r3,0x0
+    217c:	07 ff f7 a1 	l.jal 0 <__reset-0x100>
+    2180:	a8 63 3f e8 	l.ori r3,r3,0x3fe8
+    2184:	9c 40 00 01 	l.addi r2,r0,0x1
+    2188:	d8 10 10 00 	l.sb 0x0(r16),r2
+    218c:	9c 21 00 10 	l.addi r1,r1,0x10
+    2190:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    2194:	84 41 ff f0 	l.lwz r2,0xfffffff0(r1)
+    2198:	85 c1 ff f4 	l.lwz r14,0xfffffff4(r1)
+    219c:	44 00 48 00 	l.jr r9
+    21a0:	86 01 ff f8 	l.lwz r16,0xfffffff8(r1)
+
+000021a4 <call___do_global_dtors_aux>:
+    21a4:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    21a8:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    21ac:	9c 21 00 04 	l.addi r1,r1,0x4
+    21b0:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    21b4:	44 00 48 00 	l.jr r9
+    21b8:	15 00 00 00 	l.nop 0x0
+
+000021bc <frame_dummy>:
+    21bc:	18 60 00 00 	l.movhi r3,0x0
+    21c0:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    21c4:	a8 63 00 00 	l.ori r3,r3,0x0
+    21c8:	bc 03 00 00 	l.sfeqi r3,0x0
+    21cc:	10 00 00 07 	l.bf 21e8 <frame_dummy+0x2c>
+    21d0:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    21d4:	18 60 00 00 	l.movhi r3,0x0
+    21d8:	18 80 00 00 	l.movhi r4,0x0
+    21dc:	a8 63 3f e8 	l.ori r3,r3,0x3fe8
+    21e0:	07 ff f7 88 	l.jal 0 <__reset-0x100>
+    21e4:	a8 84 69 c0 	l.ori r4,r4,0x69c0
+    21e8:	18 60 00 00 	l.movhi r3,0x0
+    21ec:	a8 63 5f fc 	l.ori r3,r3,0x5ffc
+    21f0:	84 83 00 00 	l.lwz r4,0x0(r3)
+    21f4:	bc 04 00 00 	l.sfeqi r4,0x0
+    21f8:	10 00 00 0a 	l.bf 2220 <frame_dummy+0x64>
+    21fc:	18 80 00 00 	l.movhi r4,0x0
+    2200:	a8 84 00 00 	l.ori r4,r4,0x0
+    2204:	bc 04 00 00 	l.sfeqi r4,0x0
+    2208:	10 00 00 06 	l.bf 2220 <frame_dummy+0x64>
+    220c:	15 00 00 00 	l.nop 0x0
+    2210:	9c 21 00 04 	l.addi r1,r1,0x4
+    2214:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    2218:	44 00 20 00 	l.jr r4
+    221c:	15 00 00 00 	l.nop 0x0
+    2220:	9c 21 00 04 	l.addi r1,r1,0x4
+    2224:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    2228:	44 00 48 00 	l.jr r9
+    222c:	15 00 00 00 	l.nop 0x0
+
+00002230 <call_frame_dummy>:
+    2230:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    2234:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    2238:	9c 21 00 04 	l.addi r1,r1,0x4
+    223c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    2240:	44 00 48 00 	l.jr r9
+    2244:	15 00 00 00 	l.nop 0x0
+
+00002248 <funcion>:
+    2248:	d7 e1 17 fc 	l.sw 0xfffffffc(r1),r2
+    224c:	9c 41 00 00 	l.addi r2,r1,0x0
+    2250:	9c 21 ff e0 	l.addi r1,r1,0xffffffe0
+    2254:	d7 e2 1f f4 	l.sw 0xfffffff4(r2),r3
+    2258:	d7 e2 27 f0 	l.sw 0xfffffff0(r2),r4
+    225c:	d7 e2 2f ec 	l.sw 0xffffffec(r2),r5
+    2260:	d7 e2 37 e8 	l.sw 0xffffffe8(r2),r6
+    2264:	d7 e2 3f e4 	l.sw 0xffffffe4(r2),r7
+    2268:	d7 e2 47 e0 	l.sw 0xffffffe0(r2),r8
+    226c:	84 62 00 00 	l.lwz r3,0x0(r2)
+    2270:	bd a3 00 04 	l.sflesi r3,0x4
+    2274:	10 00 00 10 	l.bf 22b4 <funcion+0x6c>
+    2278:	15 00 00 00 	l.nop 0x0
+    227c:	84 82 ff f4 	l.lwz r4,0xfffffff4(r2)
+    2280:	84 62 ff f0 	l.lwz r3,0xfffffff0(r2)
+    2284:	e0 84 18 00 	l.add r4,r4,r3
+    2288:	84 62 ff ec 	l.lwz r3,0xffffffec(r2)
+    228c:	e0 84 18 00 	l.add r4,r4,r3
+    2290:	84 62 ff e8 	l.lwz r3,0xffffffe8(r2)
+    2294:	e0 84 18 00 	l.add r4,r4,r3
+    2298:	84 62 ff e4 	l.lwz r3,0xffffffe4(r2)
+    229c:	e0 84 18 02 	l.sub r4,r4,r3
+    22a0:	84 62 ff e0 	l.lwz r3,0xffffffe0(r2)
+    22a4:	e0 64 18 02 	l.sub r3,r4,r3
+    22a8:	d7 e2 1f f8 	l.sw 0xfffffff8(r2),r3
+    22ac:	00 00 00 0e 	l.j 22e4 <funcion+0x9c>
+    22b0:	15 00 00 00 	l.nop 0x0
+    22b4:	84 82 ff f4 	l.lwz r4,0xfffffff4(r2)
+    22b8:	84 62 ff f0 	l.lwz r3,0xfffffff0(r2)
+    22bc:	e0 84 18 00 	l.add r4,r4,r3
+    22c0:	84 62 ff ec 	l.lwz r3,0xffffffec(r2)
+    22c4:	e0 84 18 00 	l.add r4,r4,r3
+    22c8:	84 62 ff e8 	l.lwz r3,0xffffffe8(r2)
+    22cc:	e0 84 18 00 	l.add r4,r4,r3
+    22d0:	84 62 ff e4 	l.lwz r3,0xffffffe4(r2)
+    22d4:	e0 84 18 00 	l.add r4,r4,r3
+    22d8:	84 62 ff e0 	l.lwz r3,0xffffffe0(r2)
+    22dc:	e0 64 18 02 	l.sub r3,r4,r3
+    22e0:	d7 e2 1f f8 	l.sw 0xfffffff8(r2),r3
+    22e4:	84 62 ff f8 	l.lwz r3,0xfffffff8(r2)
+    22e8:	a9 63 00 00 	l.ori r11,r3,0x0
+    22ec:	a8 22 00 00 	l.ori r1,r2,0x0
+    22f0:	84 41 ff fc 	l.lwz r2,0xfffffffc(r1)
+    22f4:	44 00 48 00 	l.jr r9
+    22f8:	15 00 00 00 	l.nop 0x0
+
+000022fc <main>:
+    22fc:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
+    2300:	9c 41 00 00 	l.addi r2,r1,0x0
+    2304:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    2308:	9c 21 ff f0 	l.addi r1,r1,0xfffffff0
+    230c:	9c 60 00 07 	l.addi r3,r0,0x7
+    2310:	d4 01 18 00 	l.sw 0x0(r1),r3
+    2314:	9c 60 00 01 	l.addi r3,r0,0x1
+    2318:	9c 80 00 02 	l.addi r4,r0,0x2
+    231c:	9c a0 00 03 	l.addi r5,r0,0x3
+    2320:	9c c0 00 04 	l.addi r6,r0,0x4
+    2324:	9c e0 00 05 	l.addi r7,r0,0x5
+    2328:	9d 00 00 06 	l.addi r8,r0,0x6
+    232c:	07 ff ff c7 	l.jal 2248 <funcion>
+    2330:	15 00 00 00 	l.nop 0x0
+    2334:	d7 e2 5f f4 	l.sw 0xfffffff4(r2),r11
+    2338:	9c 60 00 00 	l.addi r3,r0,0x0
+    233c:	a9 63 00 00 	l.ori r11,r3,0x0
+    2340:	a8 22 00 00 	l.ori r1,r2,0x0
+    2344:	84 41 ff f8 	l.lwz r2,0xfffffff8(r1)
+    2348:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    234c:	44 00 48 00 	l.jr r9
+    2350:	15 00 00 00 	l.nop 0x0
+
+00002354 <atexit>:
+    2354:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    2358:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    235c:	a8 83 00 00 	l.ori r4,r3,0x0
+    2360:	9c 21 00 04 	l.addi r1,r1,0x4
+    2364:	9c 60 00 00 	l.addi r3,r0,0x0
+    2368:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    236c:	a8 a3 00 00 	l.ori r5,r3,0x0
+    2370:	00 00 03 bb 	l.j 325c <__register_exitproc>
+    2374:	a8 c3 00 00 	l.ori r6,r3,0x0
+
+00002378 <exit>:
+    2378:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
+    237c:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    2380:	9c 80 00 00 	l.addi r4,r0,0x0
+    2384:	9c 21 ff f8 	l.addi r1,r1,0xfffffff8
+    2388:	04 00 04 06 	l.jal 33a0 <__call_exitprocs>
+    238c:	a8 43 00 00 	l.ori r2,r3,0x0
+    2390:	18 80 00 00 	l.movhi r4,0x0
+    2394:	a8 84 3f e0 	l.ori r4,r4,0x3fe0
+    2398:	84 84 00 00 	l.lwz r4,0x0(r4)
+    239c:	84 a4 00 3c 	l.lwz r5,0x3c(r4)
+    23a0:	bc 05 00 00 	l.sfeqi r5,0x0
+    23a4:	10 00 00 04 	l.bf 23b4 <exit+0x3c>
+    23a8:	15 00 00 00 	l.nop 0x0
+    23ac:	48 00 28 00 	l.jalr r5
+    23b0:	a8 64 00 00 	l.ori r3,r4,0x0
+    23b4:	04 00 06 39 	l.jal 3c98 <_exit>
+    23b8:	a8 62 00 00 	l.ori r3,r2,0x0
+
+000023bc <malloc>:
+    23bc:	a8 83 00 00 	l.ori r4,r3,0x0
+    23c0:	18 60 00 00 	l.movhi r3,0x0
+    23c4:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    23c8:	a8 63 60 08 	l.ori r3,r3,0x6008
+    23cc:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    23d0:	84 63 00 00 	l.lwz r3,0x0(r3)
+    23d4:	9c 21 00 04 	l.addi r1,r1,0x4
+    23d8:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    23dc:	00 00 00 0c 	l.j 240c <_malloc_r>
+    23e0:	15 00 00 00 	l.nop 0x0
+
+000023e4 <free>:
+    23e4:	a8 83 00 00 	l.ori r4,r3,0x0
+    23e8:	18 60 00 00 	l.movhi r3,0x0
+    23ec:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    23f0:	a8 63 60 08 	l.ori r3,r3,0x6008
+    23f4:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    23f8:	84 63 00 00 	l.lwz r3,0x0(r3)
+    23fc:	9c 21 00 04 	l.addi r1,r1,0x4
+    2400:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    2404:	00 00 04 b9 	l.j 36e8 <_free_r>
+    2408:	15 00 00 00 	l.nop 0x0
+
+0000240c <_malloc_r>:
+    240c:	d7 e1 77 dc 	l.sw 0xffffffdc(r1),r14
+    2410:	d7 e1 87 e0 	l.sw 0xffffffe0(r1),r16
+    2414:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    2418:	d7 e1 17 d8 	l.sw 0xffffffd8(r1),r2
+    241c:	d7 e1 97 e4 	l.sw 0xffffffe4(r1),r18
+    2420:	d7 e1 a7 e8 	l.sw 0xffffffe8(r1),r20
+    2424:	d7 e1 b7 ec 	l.sw 0xffffffec(r1),r22
+    2428:	d7 e1 c7 f0 	l.sw 0xfffffff0(r1),r24
+    242c:	d7 e1 d7 f4 	l.sw 0xfffffff4(r1),r26
+    2430:	d7 e1 e7 f8 	l.sw 0xfffffff8(r1),r28
+    2434:	9d c4 00 0b 	l.addi r14,r4,0xb
+    2438:	9c 21 ff d8 	l.addi r1,r1,0xffffffd8
+    243c:	bc ae 00 16 	l.sfleui r14,0x16
+    2440:	10 00 00 36 	l.bf 2518 <_malloc_r+0x10c>
+    2444:	aa 03 00 00 	l.ori r16,r3,0x0
+    2448:	9c 40 ff f8 	l.addi r2,r0,0xfffffff8
+    244c:	e1 ce 10 03 	l.and r14,r14,r2
+    2450:	b8 6e 00 5f 	l.srli r3,r14,0x1f
+    2454:	e4 8e 20 00 	l.sfltu r14,r4
+    2458:	10 00 00 03 	l.bf 2464 <_malloc_r+0x58>
+    245c:	9c 40 00 01 	l.addi r2,r0,0x1
+    2460:	9c 40 00 00 	l.addi r2,r0,0x0
+    2464:	a4 42 00 ff 	l.andi r2,r2,0xff
+    2468:	bc 22 00 00 	l.sfnei r2,0x0
+    246c:	10 00 00 b3 	l.bf 2738 <_malloc_r+0x32c>
+    2470:	bc 03 00 00 	l.sfeqi r3,0x0
+    2474:	0c 00 00 b2 	l.bnf 273c <_malloc_r+0x330>
+    2478:	9c 40 00 0c 	l.addi r2,r0,0xc
+    247c:	04 00 02 34 	l.jal 2d4c <__malloc_lock>
+    2480:	a8 70 00 00 	l.ori r3,r16,0x0
+    2484:	bc 4e 01 f7 	l.sfgtui r14,0x1f7
+    2488:	10 00 00 27 	l.bf 2524 <_malloc_r+0x118>
+    248c:	b8 ee 00 49 	l.srli r7,r14,0x9
+    2490:	18 80 00 00 	l.movhi r4,0x0
+    2494:	b8 ee 00 43 	l.srli r7,r14,0x3
+    2498:	a8 84 64 30 	l.ori r4,r4,0x6430
+    249c:	e0 6e 20 00 	l.add r3,r14,r4
+    24a0:	84 43 00 0c 	l.lwz r2,0xc(r3)
+    24a4:	e4 22 18 00 	l.sfne r2,r3
+    24a8:	0c 00 01 8e 	l.bnf 2ae0 <_malloc_r+0x6d4>
+    24ac:	aa 44 00 00 	l.ori r18,r4,0x0
+    24b0:	84 82 00 04 	l.lwz r4,0x4(r2)
+    24b4:	9c a0 ff fc 	l.addi r5,r0,0xfffffffc
+    24b8:	84 62 00 0c 	l.lwz r3,0xc(r2)
+    24bc:	e0 84 28 03 	l.and r4,r4,r5
+    24c0:	84 c2 00 08 	l.lwz r6,0x8(r2)
+    24c4:	e0 82 20 00 	l.add r4,r2,r4
+    24c8:	d4 06 18 0c 	l.sw 0xc(r6),r3
+    24cc:	84 a4 00 04 	l.lwz r5,0x4(r4)
+    24d0:	d4 03 30 08 	l.sw 0x8(r3),r6
+    24d4:	a8 a5 00 01 	l.ori r5,r5,0x1
+    24d8:	a8 70 00 00 	l.ori r3,r16,0x0
+    24dc:	04 00 02 1e 	l.jal 2d54 <__malloc_unlock>
+    24e0:	d4 04 28 04 	l.sw 0x4(r4),r5
+    24e4:	9d 62 00 08 	l.addi r11,r2,0x8
+    24e8:	9c 21 00 28 	l.addi r1,r1,0x28
+    24ec:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    24f0:	84 41 ff d8 	l.lwz r2,0xffffffd8(r1)
+    24f4:	85 c1 ff dc 	l.lwz r14,0xffffffdc(r1)
+    24f8:	86 01 ff e0 	l.lwz r16,0xffffffe0(r1)
+    24fc:	86 41 ff e4 	l.lwz r18,0xffffffe4(r1)
+    2500:	86 81 ff e8 	l.lwz r20,0xffffffe8(r1)
+    2504:	86 c1 ff ec 	l.lwz r22,0xffffffec(r1)
+    2508:	87 01 ff f0 	l.lwz r24,0xfffffff0(r1)
+    250c:	87 41 ff f4 	l.lwz r26,0xfffffff4(r1)
+    2510:	44 00 48 00 	l.jr r9
+    2514:	87 81 ff f8 	l.lwz r28,0xfffffff8(r1)
+    2518:	9c 60 00 00 	l.addi r3,r0,0x0
+    251c:	03 ff ff ce 	l.j 2454 <_malloc_r+0x48>
+    2520:	9d c0 00 10 	l.addi r14,r0,0x10
+    2524:	bc 27 00 00 	l.sfnei r7,0x0
+    2528:	0c 00 00 88 	l.bnf 2748 <_malloc_r+0x33c>
+    252c:	bc 47 00 04 	l.sfgtui r7,0x4
+    2530:	10 00 01 55 	l.bf 2a84 <_malloc_r+0x678>
+    2534:	bc 47 00 14 	l.sfgtui r7,0x14
+    2538:	b8 ee 00 46 	l.srli r7,r14,0x6
+    253c:	9c e7 00 38 	l.addi r7,r7,0x38
+    2540:	b8 67 00 03 	l.slli r3,r7,0x3
+    2544:	19 60 00 00 	l.movhi r11,0x0
+    2548:	a9 6b 64 30 	l.ori r11,r11,0x6430
+    254c:	e0 63 58 00 	l.add r3,r3,r11
+    2550:	84 43 00 0c 	l.lwz r2,0xc(r3)
+    2554:	e4 03 10 00 	l.sfeq r3,r2
+    2558:	10 00 00 19 	l.bf 25bc <_malloc_r+0x1b0>
+    255c:	aa 4b 00 00 	l.ori r18,r11,0x0
+    2560:	9c a0 ff fc 	l.addi r5,r0,0xfffffffc
+    2564:	84 82 00 04 	l.lwz r4,0x4(r2)
+    2568:	e0 84 28 03 	l.and r4,r4,r5
+    256c:	e0 a4 70 02 	l.sub r5,r4,r14
+    2570:	bd 45 00 0f 	l.sfgtsi r5,0xf
+    2574:	10 00 00 b9 	l.bf 2858 <_malloc_r+0x44c>
+    2578:	bd 65 00 00 	l.sfgesi r5,0x0
+    257c:	0c 00 00 0c 	l.bnf 25ac <_malloc_r+0x1a0>
+    2580:	15 00 00 00 	l.nop 0x0
+    2584:	00 00 00 b8 	l.j 2864 <_malloc_r+0x458>
+    2588:	e0 82 20 00 	l.add r4,r2,r4
+    258c:	84 82 00 04 	l.lwz r4,0x4(r2)
+    2590:	e0 84 58 03 	l.and r4,r4,r11
+    2594:	e0 a4 70 02 	l.sub r5,r4,r14
+    2598:	bd a5 00 0f 	l.sflesi r5,0xf
+    259c:	0c 00 00 af 	l.bnf 2858 <_malloc_r+0x44c>
+    25a0:	bd 85 00 00 	l.sfltsi r5,0x0
+    25a4:	0c 00 00 af 	l.bnf 2860 <_malloc_r+0x454>
+    25a8:	15 00 00 00 	l.nop 0x0
+    25ac:	84 42 00 0c 	l.lwz r2,0xc(r2)
+    25b0:	e4 23 10 00 	l.sfne r3,r2
+    25b4:	13 ff ff f6 	l.bf 258c <_malloc_r+0x180>
+    25b8:	9d 60 ff fc 	l.addi r11,r0,0xfffffffc
+    25bc:	9c e7 00 01 	l.addi r7,r7,0x1
+    25c0:	18 c0 00 00 	l.movhi r6,0x0
+    25c4:	a8 c6 64 38 	l.ori r6,r6,0x6438
+    25c8:	84 46 00 08 	l.lwz r2,0x8(r6)
+    25cc:	e4 26 10 00 	l.sfne r6,r2
+    25d0:	0c 00 00 7f 	l.bnf 27cc <_malloc_r+0x3c0>
+    25d4:	9c 60 ff fc 	l.addi r3,r0,0xfffffffc
+    25d8:	84 82 00 04 	l.lwz r4,0x4(r2)
+    25dc:	e0 84 18 03 	l.and r4,r4,r3
+    25e0:	e0 64 70 02 	l.sub r3,r4,r14
+    25e4:	bd a3 00 0f 	l.sflesi r3,0xf
+    25e8:	0c 00 01 2f 	l.bnf 2aa4 <_malloc_r+0x698>
+    25ec:	bd 83 00 00 	l.sfltsi r3,0x0
+    25f0:	d4 06 30 0c 	l.sw 0xc(r6),r6
+    25f4:	0c 00 00 a7 	l.bnf 2890 <_malloc_r+0x484>
+    25f8:	d4 06 30 08 	l.sw 0x8(r6),r6
+    25fc:	bc 44 01 ff 	l.sfgtui r4,0x1ff
+    2600:	10 00 00 55 	l.bf 2754 <_malloc_r+0x348>
+    2604:	b8 64 00 49 	l.srli r3,r4,0x9
+    2608:	b8 64 00 43 	l.srli r3,r4,0x3
+    260c:	9d 00 00 01 	l.addi r8,r0,0x1
+    2610:	84 92 00 04 	l.lwz r4,0x4(r18)
+    2614:	b8 a3 00 82 	l.srai r5,r3,0x2
+    2618:	b8 63 00 03 	l.slli r3,r3,0x3
+    261c:	e1 08 28 08 	l.sll r8,r8,r5
+    2620:	18 a0 00 00 	l.movhi r5,0x0
+    2624:	a8 a5 64 30 	l.ori r5,r5,0x6430
+    2628:	e0 88 20 04 	l.or r4,r8,r4
+    262c:	e0 63 28 00 	l.add r3,r3,r5
+    2630:	d4 12 20 04 	l.sw 0x4(r18),r4
+    2634:	84 a3 00 08 	l.lwz r5,0x8(r3)
+    2638:	d4 02 18 0c 	l.sw 0xc(r2),r3
+    263c:	d4 02 28 08 	l.sw 0x8(r2),r5
+    2640:	d4 03 10 08 	l.sw 0x8(r3),r2
+    2644:	d4 05 10 0c 	l.sw 0xc(r5),r2
+    2648:	b8 47 00 82 	l.srai r2,r7,0x2
+    264c:	9c 60 00 01 	l.addi r3,r0,0x1
+    2650:	e0 63 10 08 	l.sll r3,r3,r2
+    2654:	e4 43 20 00 	l.sfgtu r3,r4
+    2658:	10 00 00 64 	l.bf 27e8 <_malloc_r+0x3dc>
+    265c:	e0 44 18 03 	l.and r2,r4,r3
+    2660:	bc 22 00 00 	l.sfnei r2,0x0
+    2664:	10 00 00 0d 	l.bf 2698 <_malloc_r+0x28c>
+    2668:	9c 40 ff fc 	l.addi r2,r0,0xfffffffc
+    266c:	e0 63 18 00 	l.add r3,r3,r3
+    2670:	e0 e7 10 03 	l.and r7,r7,r2
+    2674:	e0 44 18 03 	l.and r2,r4,r3
+    2678:	bc 22 00 00 	l.sfnei r2,0x0
+    267c:	10 00 00 07 	l.bf 2698 <_malloc_r+0x28c>
+    2680:	9c e7 00 04 	l.addi r7,r7,0x4
+    2684:	e0 63 18 00 	l.add r3,r3,r3
+    2688:	e0 43 20 03 	l.and r2,r3,r4
+    268c:	bc 02 00 00 	l.sfeqi r2,0x0
+    2690:	13 ff ff fd 	l.bf 2684 <_malloc_r+0x278>
+    2694:	9c e7 00 04 	l.addi r7,r7,0x4
+    2698:	18 80 00 00 	l.movhi r4,0x0
+    269c:	b9 87 00 03 	l.slli r12,r7,0x3
+    26a0:	a8 84 64 30 	l.ori r4,r4,0x6430
+    26a4:	a9 67 00 00 	l.ori r11,r7,0x0
+    26a8:	e1 8c 20 00 	l.add r12,r12,r4
+    26ac:	a9 0c 00 00 	l.ori r8,r12,0x0
+    26b0:	84 48 00 0c 	l.lwz r2,0xc(r8)
+    26b4:	e4 08 10 00 	l.sfeq r8,r2
+    26b8:	10 00 00 19 	l.bf 271c <_malloc_r+0x310>
+    26bc:	9c 80 ff fc 	l.addi r4,r0,0xfffffffc
+    26c0:	84 a2 00 04 	l.lwz r5,0x4(r2)
+    26c4:	e0 a5 20 03 	l.and r5,r5,r4
+    26c8:	e0 85 70 02 	l.sub r4,r5,r14
+    26cc:	bd 44 00 0f 	l.sfgtsi r4,0xf
+    26d0:	10 00 01 0b 	l.bf 2afc <_malloc_r+0x6f0>
+    26d4:	bd 64 00 00 	l.sfgesi r4,0x0
+    26d8:	0c 00 00 0d 	l.bnf 270c <_malloc_r+0x300>
+    26dc:	15 00 00 00 	l.nop 0x0
+    26e0:	00 00 01 1b 	l.j 2b4c <_malloc_r+0x740>
+    26e4:	e0 a2 28 00 	l.add r5,r2,r5
+    26e8:	9c 80 ff fc 	l.addi r4,r0,0xfffffffc
+    26ec:	84 a2 00 04 	l.lwz r5,0x4(r2)
+    26f0:	e0 a5 20 03 	l.and r5,r5,r4
+    26f4:	e0 85 70 02 	l.sub r4,r5,r14
+    26f8:	bd a4 00 0f 	l.sflesi r4,0xf
+    26fc:	0c 00 01 00 	l.bnf 2afc <_malloc_r+0x6f0>
+    2700:	bd 84 00 00 	l.sfltsi r4,0x0
+    2704:	0c 00 01 11 	l.bnf 2b48 <_malloc_r+0x73c>
+    2708:	15 00 00 00 	l.nop 0x0
+    270c:	84 42 00 0c 	l.lwz r2,0xc(r2)
+    2710:	e4 28 10 00 	l.sfne r8,r2
+    2714:	13 ff ff f5 	l.bf 26e8 <_malloc_r+0x2dc>
+    2718:	15 00 00 00 	l.nop 0x0
+    271c:	9d 6b 00 01 	l.addi r11,r11,0x1
+    2720:	a4 4b 00 03 	l.andi r2,r11,0x3
+    2724:	bc 22 00 00 	l.sfnei r2,0x0
+    2728:	0c 00 01 42 	l.bnf 2c30 <_malloc_r+0x824>
+    272c:	9d 08 00 08 	l.addi r8,r8,0x8
+    2730:	03 ff ff e1 	l.j 26b4 <_malloc_r+0x2a8>
+    2734:	84 48 00 0c 	l.lwz r2,0xc(r8)
+    2738:	9c 40 00 0c 	l.addi r2,r0,0xc
+    273c:	9d 60 00 00 	l.addi r11,r0,0x0
+    2740:	03 ff ff 6a 	l.j 24e8 <_malloc_r+0xdc>
+    2744:	d4 10 10 00 	l.sw 0x0(r16),r2
+    2748:	b8 ee 00 43 	l.srli r7,r14,0x3
+    274c:	03 ff ff 7e 	l.j 2544 <_malloc_r+0x138>
+    2750:	b8 67 00 03 	l.slli r3,r7,0x3
+    2754:	bc 43 00 04 	l.sfgtui r3,0x4
+    2758:	10 00 01 0b 	l.bf 2b84 <_malloc_r+0x778>
+    275c:	bc 43 00 14 	l.sfgtui r3,0x14
+    2760:	b9 04 00 46 	l.srli r8,r4,0x6
+    2764:	9d 08 00 38 	l.addi r8,r8,0x38
+    2768:	19 60 00 00 	l.movhi r11,0x0
+    276c:	b8 a8 00 03 	l.slli r5,r8,0x3
+    2770:	a9 6b 64 30 	l.ori r11,r11,0x6430
+    2774:	e0 a5 58 00 	l.add r5,r5,r11
+    2778:	84 65 00 08 	l.lwz r3,0x8(r5)
+    277c:	e4 03 28 00 	l.sfeq r3,r5
+    2780:	0c 00 00 08 	l.bnf 27a0 <_malloc_r+0x394>
+    2784:	b9 08 00 82 	l.srai r8,r8,0x2
+    2788:	00 00 01 14 	l.j 2bd8 <_malloc_r+0x7cc>
+    278c:	9c 80 00 01 	l.addi r4,r0,0x1
+    2790:	84 63 00 08 	l.lwz r3,0x8(r3)
+    2794:	e4 05 18 00 	l.sfeq r5,r3
+    2798:	10 00 00 08 	l.bf 27b8 <_malloc_r+0x3ac>
+    279c:	15 00 00 00 	l.nop 0x0
+    27a0:	85 03 00 04 	l.lwz r8,0x4(r3)
+    27a4:	9d 60 ff fc 	l.addi r11,r0,0xfffffffc
+    27a8:	e1 08 58 03 	l.and r8,r8,r11
+    27ac:	e4 84 40 00 	l.sfltu r4,r8
+    27b0:	13 ff ff f8 	l.bf 2790 <_malloc_r+0x384>
+    27b4:	15 00 00 00 	l.nop 0x0
+    27b8:	84 83 00 0c 	l.lwz r4,0xc(r3)
+    27bc:	d4 02 20 0c 	l.sw 0xc(r2),r4
+    27c0:	d4 02 18 08 	l.sw 0x8(r2),r3
+    27c4:	d4 04 10 08 	l.sw 0x8(r4),r2
+    27c8:	d4 03 10 0c 	l.sw 0xc(r3),r2
+    27cc:	b8 47 00 82 	l.srai r2,r7,0x2
+    27d0:	9c 60 00 01 	l.addi r3,r0,0x1
+    27d4:	84 92 00 04 	l.lwz r4,0x4(r18)
+    27d8:	e0 63 10 08 	l.sll r3,r3,r2
+    27dc:	e4 43 20 00 	l.sfgtu r3,r4
+    27e0:	0f ff ff a0 	l.bnf 2660 <_malloc_r+0x254>
+    27e4:	e0 44 18 03 	l.and r2,r4,r3
+    27e8:	84 52 00 08 	l.lwz r2,0x8(r18)
+    27ec:	9c a0 ff fc 	l.addi r5,r0,0xfffffffc
+    27f0:	86 82 00 04 	l.lwz r20,0x4(r2)
+    27f4:	e2 94 28 03 	l.and r20,r20,r5
+    27f8:	e0 74 70 02 	l.sub r3,r20,r14
+    27fc:	bd a3 00 0f 	l.sflesi r3,0xf
+    2800:	10 00 00 03 	l.bf 280c <_malloc_r+0x400>
+    2804:	9c 80 00 01 	l.addi r4,r0,0x1
+    2808:	9c 80 00 00 	l.addi r4,r0,0x0
+    280c:	a4 84 00 ff 	l.andi r4,r4,0xff
+    2810:	bc 24 00 00 	l.sfnei r4,0x0
+    2814:	10 00 00 27 	l.bf 28b0 <_malloc_r+0x4a4>
+    2818:	e4 4e a0 00 	l.sfgtu r14,r20
+    281c:	0c 00 00 de 	l.bnf 2b94 <_malloc_r+0x788>
+    2820:	9c a0 00 01 	l.addi r5,r0,0x1
+    2824:	a4 a5 00 ff 	l.andi r5,r5,0xff
+    2828:	bc 05 00 00 	l.sfeqi r5,0x0
+    282c:	0c 00 00 21 	l.bnf 28b0 <_malloc_r+0x4a4>
+    2830:	a8 8e 00 01 	l.ori r4,r14,0x1
+    2834:	a8 63 00 01 	l.ori r3,r3,0x1
+    2838:	e1 c2 70 00 	l.add r14,r2,r14
+    283c:	d4 02 20 04 	l.sw 0x4(r2),r4
+    2840:	d4 0e 18 04 	l.sw 0x4(r14),r3
+    2844:	d4 12 70 08 	l.sw 0x8(r18),r14
+    2848:	04 00 01 43 	l.jal 2d54 <__malloc_unlock>
+    284c:	a8 70 00 00 	l.ori r3,r16,0x0
+    2850:	03 ff ff 26 	l.j 24e8 <_malloc_r+0xdc>
+    2854:	9d 62 00 08 	l.addi r11,r2,0x8
+    2858:	03 ff ff 59 	l.j 25bc <_malloc_r+0x1b0>
+    285c:	9c e7 ff ff 	l.addi r7,r7,0xffffffff
+    2860:	e0 82 20 00 	l.add r4,r2,r4
+    2864:	84 62 00 0c 	l.lwz r3,0xc(r2)
+    2868:	84 a4 00 04 	l.lwz r5,0x4(r4)
+    286c:	84 c2 00 08 	l.lwz r6,0x8(r2)
+    2870:	a8 a5 00 01 	l.ori r5,r5,0x1
+    2874:	d4 06 18 0c 	l.sw 0xc(r6),r3
+    2878:	d4 03 30 08 	l.sw 0x8(r3),r6
+    287c:	d4 04 28 04 	l.sw 0x4(r4),r5
+    2880:	04 00 01 35 	l.jal 2d54 <__malloc_unlock>
+    2884:	a8 70 00 00 	l.ori r3,r16,0x0
+    2888:	03 ff ff 18 	l.j 24e8 <_malloc_r+0xdc>
+    288c:	9d 62 00 08 	l.addi r11,r2,0x8
+    2890:	e0 82 20 00 	l.add r4,r2,r4
+    2894:	a8 70 00 00 	l.ori r3,r16,0x0
+    2898:	84 a4 00 04 	l.lwz r5,0x4(r4)
+    289c:	a8 a5 00 01 	l.ori r5,r5,0x1
+    28a0:	04 00 01 2d 	l.jal 2d54 <__malloc_unlock>
+    28a4:	d4 04 28 04 	l.sw 0x4(r4),r5
+    28a8:	03 ff ff 10 	l.j 24e8 <_malloc_r+0xdc>
+    28ac:	9d 62 00 08 	l.addi r11,r2,0x8
+    28b0:	18 60 00 00 	l.movhi r3,0x0
+    28b4:	1b 80 00 00 	l.movhi r28,0x0
+    28b8:	a8 63 69 d8 	l.ori r3,r3,0x69d8
+    28bc:	ab 9c 68 3c 	l.ori r28,r28,0x683c
+    28c0:	86 c3 00 00 	l.lwz r22,0x0(r3)
+    28c4:	84 7c 00 00 	l.lwz r3,0x0(r28)
+    28c8:	9e d6 00 10 	l.addi r22,r22,0x10
+    28cc:	bc 03 ff ff 	l.sfeqi r3,0xffffffff
+    28d0:	10 00 00 05 	l.bf 28e4 <_malloc_r+0x4d8>
+    28d4:	e2 d6 70 00 	l.add r22,r22,r14
+    28d8:	9e d6 0f ff 	l.addi r22,r22,0xfff
+    28dc:	9d 60 f0 00 	l.addi r11,r0,0xfffff000
+    28e0:	e2 d6 58 03 	l.and r22,r22,r11
+    28e4:	a8 70 00 00 	l.ori r3,r16,0x0
+    28e8:	04 00 02 40 	l.jal 31e8 <_sbrk_r>
+    28ec:	a8 96 00 00 	l.ori r4,r22,0x0
+    28f0:	bc 2b ff ff 	l.sfnei r11,0xffffffff
+    28f4:	0c 00 00 ec 	l.bnf 2ca4 <_malloc_r+0x898>
+    28f8:	ab 0b 00 00 	l.ori r24,r11,0x0
+    28fc:	e0 82 a0 00 	l.add r4,r2,r20
+    2900:	e4 a4 58 00 	l.sfleu r4,r11
+    2904:	0c 00 00 a6 	l.bnf 2b9c <_malloc_r+0x790>
+    2908:	18 a0 00 00 	l.movhi r5,0x0
+    290c:	1b 40 00 00 	l.movhi r26,0x0
+    2910:	e4 24 58 00 	l.sfne r4,r11
+    2914:	ab 5a 69 e4 	l.ori r26,r26,0x69e4
+    2918:	84 7a 00 00 	l.lwz r3,0x0(r26)
+    291c:	e0 76 18 00 	l.add r3,r22,r3
+    2920:	0c 00 00 eb 	l.bnf 2ccc <_malloc_r+0x8c0>
+    2924:	d4 1a 18 00 	l.sw 0x0(r26),r3
+    2928:	84 bc 00 00 	l.lwz r5,0x0(r28)
+    292c:	bc 25 ff ff 	l.sfnei r5,0xffffffff
+    2930:	0c 00 00 f9 	l.bnf 2d14 <_malloc_r+0x908>
+    2934:	e0 6b 18 00 	l.add r3,r11,r3
+    2938:	e0 83 20 02 	l.sub r4,r3,r4
+    293c:	d4 1a 20 00 	l.sw 0x0(r26),r4
+    2940:	a4 6b 00 07 	l.andi r3,r11,0x7
+    2944:	bc 03 00 00 	l.sfeqi r3,0x0
+    2948:	10 00 00 06 	l.bf 2960 <_malloc_r+0x554>
+    294c:	9c 80 10 00 	l.addi r4,r0,0x1000
+    2950:	9c 80 00 08 	l.addi r4,r0,0x8
+    2954:	e0 64 18 02 	l.sub r3,r4,r3
+    2958:	e3 0b 18 00 	l.add r24,r11,r3
+    295c:	9c 83 10 00 	l.addi r4,r3,0x1000
+    2960:	e2 d8 b0 00 	l.add r22,r24,r22
+    2964:	a8 70 00 00 	l.ori r3,r16,0x0
+    2968:	a6 d6 0f ff 	l.andi r22,r22,0xfff
+    296c:	e2 c4 b0 02 	l.sub r22,r4,r22
+    2970:	04 00 02 1e 	l.jal 31e8 <_sbrk_r>
+    2974:	a8 96 00 00 	l.ori r4,r22,0x0
+    2978:	bc 0b ff ff 	l.sfeqi r11,0xffffffff
+    297c:	10 00 00 e4 	l.bf 2d0c <_malloc_r+0x900>
+    2980:	9c 80 00 01 	l.addi r4,r0,0x1
+    2984:	e0 8b c0 02 	l.sub r4,r11,r24
+    2988:	e0 84 b0 00 	l.add r4,r4,r22
+    298c:	a8 84 00 01 	l.ori r4,r4,0x1
+    2990:	84 7a 00 00 	l.lwz r3,0x0(r26)
+    2994:	d4 18 20 04 	l.sw 0x4(r24),r4
+    2998:	e0 76 18 00 	l.add r3,r22,r3
+    299c:	18 80 00 00 	l.movhi r4,0x0
+    29a0:	d4 12 c0 08 	l.sw 0x8(r18),r24
+    29a4:	a8 84 64 30 	l.ori r4,r4,0x6430
+    29a8:	e4 02 20 00 	l.sfeq r2,r4
+    29ac:	10 00 00 11 	l.bf 29f0 <_malloc_r+0x5e4>
+    29b0:	d4 1a 18 00 	l.sw 0x0(r26),r3
+    29b4:	bc 54 00 0f 	l.sfgtui r20,0xf
+    29b8:	0c 00 00 99 	l.bnf 2c1c <_malloc_r+0x810>
+    29bc:	9c a0 ff f8 	l.addi r5,r0,0xfffffff8
+    29c0:	9c 94 ff f4 	l.addi r4,r20,0xfffffff4
+    29c4:	9c c0 00 05 	l.addi r6,r0,0x5
+    29c8:	e0 84 28 03 	l.and r4,r4,r5
+    29cc:	e0 a2 20 00 	l.add r5,r2,r4
+    29d0:	bc a4 00 0f 	l.sfleui r4,0xf
+    29d4:	d4 05 30 04 	l.sw 0x4(r5),r6
+    29d8:	d4 05 30 08 	l.sw 0x8(r5),r6
+    29dc:	84 a2 00 04 	l.lwz r5,0x4(r2)
+    29e0:	a4 a5 00 01 	l.andi r5,r5,0x1
+    29e4:	e0 84 28 04 	l.or r4,r4,r5
+    29e8:	0c 00 00 c2 	l.bnf 2cf0 <_malloc_r+0x8e4>
+    29ec:	d4 02 20 04 	l.sw 0x4(r2),r4
+    29f0:	18 40 00 00 	l.movhi r2,0x0
+    29f4:	a8 42 69 dc 	l.ori r2,r2,0x69dc
+    29f8:	84 82 00 00 	l.lwz r4,0x0(r2)
+    29fc:	e4 a3 20 00 	l.sfleu r3,r4
+    2a00:	10 00 00 03 	l.bf 2a0c <_malloc_r+0x600>
+    2a04:	18 80 00 00 	l.movhi r4,0x0
+    2a08:	d4 02 18 00 	l.sw 0x0(r2),r3
+    2a0c:	a8 84 69 e0 	l.ori r4,r4,0x69e0
+    2a10:	84 44 00 00 	l.lwz r2,0x0(r4)
+    2a14:	e4 43 10 00 	l.sfgtu r3,r2
+    2a18:	0c 00 00 65 	l.bnf 2bac <_malloc_r+0x7a0>
+    2a1c:	15 00 00 00 	l.nop 0x0
+    2a20:	d4 04 18 00 	l.sw 0x0(r4),r3
+    2a24:	84 52 00 08 	l.lwz r2,0x8(r18)
+    2a28:	9c 60 ff fc 	l.addi r3,r0,0xfffffffc
+    2a2c:	84 82 00 04 	l.lwz r4,0x4(r2)
+    2a30:	e0 84 18 03 	l.and r4,r4,r3
+    2a34:	e0 64 70 02 	l.sub r3,r4,r14
+    2a38:	bd a3 00 0f 	l.sflesi r3,0xf
+    2a3c:	10 00 00 03 	l.bf 2a48 <_malloc_r+0x63c>
+    2a40:	9c a0 00 01 	l.addi r5,r0,0x1
+    2a44:	9c a0 00 00 	l.addi r5,r0,0x0
+    2a48:	a4 a5 00 ff 	l.andi r5,r5,0xff
+    2a4c:	bc 25 00 00 	l.sfnei r5,0x0
+    2a50:	10 00 00 09 	l.bf 2a74 <_malloc_r+0x668>
+    2a54:	e4 4e 20 00 	l.sfgtu r14,r4
+    2a58:	10 00 00 03 	l.bf 2a64 <_malloc_r+0x658>
+    2a5c:	9c c0 00 01 	l.addi r6,r0,0x1
+    2a60:	a8 c5 00 00 	l.ori r6,r5,0x0
+    2a64:	a4 c6 00 ff 	l.andi r6,r6,0xff
+    2a68:	bc 06 00 00 	l.sfeqi r6,0x0
+    2a6c:	13 ff ff 72 	l.bf 2834 <_malloc_r+0x428>
+    2a70:	a8 8e 00 01 	l.ori r4,r14,0x1
+    2a74:	04 00 00 b8 	l.jal 2d54 <__malloc_unlock>
+    2a78:	a8 70 00 00 	l.ori r3,r16,0x0
+    2a7c:	03 ff fe 9b 	l.j 24e8 <_malloc_r+0xdc>
+    2a80:	9d 60 00 00 	l.addi r11,r0,0x0
+    2a84:	0c 00 00 3d 	l.bnf 2b78 <_malloc_r+0x76c>
+    2a88:	bc 47 00 54 	l.sfgtui r7,0x54
+    2a8c:	10 00 00 4d 	l.bf 2bc0 <_malloc_r+0x7b4>
+    2a90:	bc 47 01 54 	l.sfgtui r7,0x154
+    2a94:	b8 ee 00 4c 	l.srli r7,r14,0xc
+    2a98:	9c e7 00 6e 	l.addi r7,r7,0x6e
+    2a9c:	03 ff fe aa 	l.j 2544 <_malloc_r+0x138>
+    2aa0:	b8 67 00 03 	l.slli r3,r7,0x3
+    2aa4:	e0 82 70 00 	l.add r4,r2,r14
+    2aa8:	a9 ce 00 01 	l.ori r14,r14,0x1
+    2aac:	a8 e3 00 01 	l.ori r7,r3,0x1
+    2ab0:	e0 a4 18 00 	l.add r5,r4,r3
+    2ab4:	d4 02 70 04 	l.sw 0x4(r2),r14
+    2ab8:	d4 06 20 0c 	l.sw 0xc(r6),r4
+    2abc:	d4 06 20 08 	l.sw 0x8(r6),r4
+    2ac0:	d4 05 18 00 	l.sw 0x0(r5),r3
+    2ac4:	d4 04 30 0c 	l.sw 0xc(r4),r6
+    2ac8:	d4 04 30 08 	l.sw 0x8(r4),r6
+    2acc:	d4 04 38 04 	l.sw 0x4(r4),r7
+    2ad0:	04 00 00 a1 	l.jal 2d54 <__malloc_unlock>
+    2ad4:	a8 70 00 00 	l.ori r3,r16,0x0
+    2ad8:	03 ff fe 84 	l.j 24e8 <_malloc_r+0xdc>
+    2adc:	9d 62 00 08 	l.addi r11,r2,0x8
+    2ae0:	9c 62 00 08 	l.addi r3,r2,0x8
+    2ae4:	84 43 00 0c 	l.lwz r2,0xc(r3)
+    2ae8:	e4 03 10 00 	l.sfeq r3,r2
+    2aec:	0f ff fe 71 	l.bnf 24b0 <_malloc_r+0xa4>
+    2af0:	9c e7 00 02 	l.addi r7,r7,0x2
+    2af4:	03 ff fe b4 	l.j 25c4 <_malloc_r+0x1b8>
+    2af8:	18 c0 00 00 	l.movhi r6,0x0
+    2afc:	e0 62 70 00 	l.add r3,r2,r14
+    2b00:	84 a2 00 0c 	l.lwz r5,0xc(r2)
+    2b04:	84 e2 00 08 	l.lwz r7,0x8(r2)
+    2b08:	a9 ce 00 01 	l.ori r14,r14,0x1
+    2b0c:	d4 07 28 0c 	l.sw 0xc(r7),r5
+    2b10:	d4 05 38 08 	l.sw 0x8(r5),r7
+    2b14:	e0 a3 20 00 	l.add r5,r3,r4
+    2b18:	a8 e4 00 01 	l.ori r7,r4,0x1
+    2b1c:	d4 06 18 0c 	l.sw 0xc(r6),r3
+    2b20:	d4 06 18 08 	l.sw 0x8(r6),r3
+    2b24:	d4 02 70 04 	l.sw 0x4(r2),r14
+    2b28:	d4 03 30 0c 	l.sw 0xc(r3),r6
+    2b2c:	d4 03 30 08 	l.sw 0x8(r3),r6
+    2b30:	d4 03 38 04 	l.sw 0x4(r3),r7
+    2b34:	d4 05 20 00 	l.sw 0x0(r5),r4
+    2b38:	04 00 00 87 	l.jal 2d54 <__malloc_unlock>
+    2b3c:	a8 70 00 00 	l.ori r3,r16,0x0
+    2b40:	03 ff fe 6a 	l.j 24e8 <_malloc_r+0xdc>
+    2b44:	9d 62 00 08 	l.addi r11,r2,0x8
+    2b48:	e0 a2 28 00 	l.add r5,r2,r5
+    2b4c:	84 62 00 0c 	l.lwz r3,0xc(r2)
+    2b50:	84 c5 00 04 	l.lwz r6,0x4(r5)
+    2b54:	84 82 00 08 	l.lwz r4,0x8(r2)
+    2b58:	a8 c6 00 01 	l.ori r6,r6,0x1
+    2b5c:	d4 04 18 0c 	l.sw 0xc(r4),r3
+    2b60:	d4 03 20 08 	l.sw 0x8(r3),r4
+    2b64:	d4 05 30 04 	l.sw 0x4(r5),r6
+    2b68:	04 00 00 7b 	l.jal 2d54 <__malloc_unlock>
+    2b6c:	a8 70 00 00 	l.ori r3,r16,0x0
+    2b70:	03 ff fe 5e 	l.j 24e8 <_malloc_r+0xdc>
+    2b74:	9d 62 00 08 	l.addi r11,r2,0x8
+    2b78:	9c e7 00 5b 	l.addi r7,r7,0x5b
+    2b7c:	03 ff fe 72 	l.j 2544 <_malloc_r+0x138>
+    2b80:	b8 67 00 03 	l.slli r3,r7,0x3
+    2b84:	10 00 00 21 	l.bf 2c08 <_malloc_r+0x7fc>
+    2b88:	bc 43 00 54 	l.sfgtui r3,0x54
+    2b8c:	03 ff fe f7 	l.j 2768 <_malloc_r+0x35c>
+    2b90:	9d 03 00 5b 	l.addi r8,r3,0x5b
+    2b94:	03 ff ff 24 	l.j 2824 <_malloc_r+0x418>
+    2b98:	a8 a4 00 00 	l.ori r5,r4,0x0
+    2b9c:	a8 a5 64 30 	l.ori r5,r5,0x6430
+    2ba0:	e4 02 28 00 	l.sfeq r2,r5
+    2ba4:	13 ff ff 5a 	l.bf 290c <_malloc_r+0x500>
+    2ba8:	15 00 00 00 	l.nop 0x0
+    2bac:	84 52 00 08 	l.lwz r2,0x8(r18)
+    2bb0:	9d 60 ff fc 	l.addi r11,r0,0xfffffffc
+    2bb4:	84 82 00 04 	l.lwz r4,0x4(r2)
+    2bb8:	03 ff ff 9f 	l.j 2a34 <_malloc_r+0x628>
+    2bbc:	e0 84 58 03 	l.and r4,r4,r11
+    2bc0:	10 00 00 0c 	l.bf 2bf0 <_malloc_r+0x7e4>
+    2bc4:	bc 47 05 54 	l.sfgtui r7,0x554
+    2bc8:	b8 ee 00 4f 	l.srli r7,r14,0xf
+    2bcc:	9c e7 00 77 	l.addi r7,r7,0x77
+    2bd0:	03 ff fe 5d 	l.j 2544 <_malloc_r+0x138>
+    2bd4:	b8 67 00 03 	l.slli r3,r7,0x3
+    2bd8:	85 72 00 04 	l.lwz r11,0x4(r18)
+    2bdc:	e0 a4 40 08 	l.sll r5,r4,r8
+    2be0:	a8 83 00 00 	l.ori r4,r3,0x0
+    2be4:	e0 ab 28 04 	l.or r5,r11,r5
+    2be8:	03 ff fe f5 	l.j 27bc <_malloc_r+0x3b0>
+    2bec:	d4 12 28 04 	l.sw 0x4(r18),r5
+    2bf0:	10 00 00 2a 	l.bf 2c98 <_malloc_r+0x88c>
+    2bf4:	15 00 00 00 	l.nop 0x0
+    2bf8:	b8 ee 00 52 	l.srli r7,r14,0x12
+    2bfc:	9c e7 00 7c 	l.addi r7,r7,0x7c
+    2c00:	03 ff fe 51 	l.j 2544 <_malloc_r+0x138>
+    2c04:	b8 67 00 03 	l.slli r3,r7,0x3
+    2c08:	10 00 00 2c 	l.bf 2cb8 <_malloc_r+0x8ac>
+    2c0c:	bc 43 01 54 	l.sfgtui r3,0x154
+    2c10:	b9 04 00 4c 	l.srli r8,r4,0xc
+    2c14:	03 ff fe d5 	l.j 2768 <_malloc_r+0x35c>
+    2c18:	9d 08 00 6e 	l.addi r8,r8,0x6e
+    2c1c:	9c 60 00 01 	l.addi r3,r0,0x1
+    2c20:	a8 58 00 00 	l.ori r2,r24,0x0
+    2c24:	d4 18 18 04 	l.sw 0x4(r24),r3
+    2c28:	03 ff ff 83 	l.j 2a34 <_malloc_r+0x628>
+    2c2c:	9c 80 00 00 	l.addi r4,r0,0x0
+    2c30:	a8 4c 00 00 	l.ori r2,r12,0x0
+    2c34:	a4 a7 00 03 	l.andi r5,r7,0x3
+    2c38:	bc 25 00 00 	l.sfnei r5,0x0
+    2c3c:	0c 00 00 3f 	l.bnf 2d38 <_malloc_r+0x92c>
+    2c40:	9c 82 ff f8 	l.addi r4,r2,0xfffffff8
+    2c44:	84 42 00 00 	l.lwz r2,0x0(r2)
+    2c48:	e4 22 20 00 	l.sfne r2,r4
+    2c4c:	0f ff ff fa 	l.bnf 2c34 <_malloc_r+0x828>
+    2c50:	9c e7 ff ff 	l.addi r7,r7,0xffffffff
+    2c54:	e0 63 18 00 	l.add r3,r3,r3
+    2c58:	84 52 00 04 	l.lwz r2,0x4(r18)
+    2c5c:	e4 43 10 00 	l.sfgtu r3,r2
+    2c60:	13 ff fe e2 	l.bf 27e8 <_malloc_r+0x3dc>
+    2c64:	bc 03 00 00 	l.sfeqi r3,0x0
+    2c68:	13 ff fe e0 	l.bf 27e8 <_malloc_r+0x3dc>
+    2c6c:	e0 83 10 03 	l.and r4,r3,r2
+    2c70:	bc 24 00 00 	l.sfnei r4,0x0
+    2c74:	13 ff fe 89 	l.bf 2698 <_malloc_r+0x28c>
+    2c78:	a8 eb 00 00 	l.ori r7,r11,0x0
+    2c7c:	e0 63 18 00 	l.add r3,r3,r3
+    2c80:	e0 83 10 03 	l.and r4,r3,r2
+    2c84:	bc 04 00 00 	l.sfeqi r4,0x0
+    2c88:	13 ff ff fd 	l.bf 2c7c <_malloc_r+0x870>
+    2c8c:	9d 6b 00 04 	l.addi r11,r11,0x4
+    2c90:	03 ff fe 82 	l.j 2698 <_malloc_r+0x28c>
+    2c94:	a8 eb 00 00 	l.ori r7,r11,0x0
+    2c98:	9c 60 03 f0 	l.addi r3,r0,0x3f0
+    2c9c:	03 ff fe 2a 	l.j 2544 <_malloc_r+0x138>
+    2ca0:	9c e0 00 7e 	l.addi r7,r0,0x7e
+    2ca4:	84 52 00 08 	l.lwz r2,0x8(r18)
+    2ca8:	9c 60 ff fc 	l.addi r3,r0,0xfffffffc
+    2cac:	84 82 00 04 	l.lwz r4,0x4(r2)
+    2cb0:	03 ff ff 61 	l.j 2a34 <_malloc_r+0x628>
+    2cb4:	e0 84 18 03 	l.and r4,r4,r3
+    2cb8:	10 00 00 1b 	l.bf 2d24 <_malloc_r+0x918>
+    2cbc:	bc 43 05 54 	l.sfgtui r3,0x554
+    2cc0:	b9 04 00 4f 	l.srli r8,r4,0xf
+    2cc4:	03 ff fe a9 	l.j 2768 <_malloc_r+0x35c>
+    2cc8:	9d 08 00 77 	l.addi r8,r8,0x77
+    2ccc:	a4 a4 0f ff 	l.andi r5,r4,0xfff
+    2cd0:	bc 25 00 00 	l.sfnei r5,0x0
+    2cd4:	13 ff ff 15 	l.bf 2928 <_malloc_r+0x51c>
+    2cd8:	15 00 00 00 	l.nop 0x0
+    2cdc:	e0 56 a0 00 	l.add r2,r22,r20
+    2ce0:	84 92 00 08 	l.lwz r4,0x8(r18)
+    2ce4:	a8 42 00 01 	l.ori r2,r2,0x1
+    2ce8:	03 ff ff 42 	l.j 29f0 <_malloc_r+0x5e4>
+    2cec:	d4 04 10 04 	l.sw 0x4(r4),r2
+    2cf0:	9c 82 00 08 	l.addi r4,r2,0x8
+    2cf4:	18 40 00 00 	l.movhi r2,0x0
+    2cf8:	a8 70 00 00 	l.ori r3,r16,0x0
+    2cfc:	04 00 02 7b 	l.jal 36e8 <_free_r>
+    2d00:	a8 42 69 e4 	l.ori r2,r2,0x69e4
+    2d04:	03 ff ff 3b 	l.j 29f0 <_malloc_r+0x5e4>
+    2d08:	84 62 00 00 	l.lwz r3,0x0(r2)
+    2d0c:	03 ff ff 21 	l.j 2990 <_malloc_r+0x584>
+    2d10:	9e c0 00 00 	l.addi r22,r0,0x0
+    2d14:	18 60 00 00 	l.movhi r3,0x0
+    2d18:	a8 63 68 3c 	l.ori r3,r3,0x683c
+    2d1c:	03 ff ff 09 	l.j 2940 <_malloc_r+0x534>
+    2d20:	d4 03 58 00 	l.sw 0x0(r3),r11
+    2d24:	13 ff fe 91 	l.bf 2768 <_malloc_r+0x35c>
+    2d28:	9d 00 00 7e 	l.addi r8,r0,0x7e
+    2d2c:	b9 04 00 52 	l.srli r8,r4,0x12
+    2d30:	03 ff fe 8e 	l.j 2768 <_malloc_r+0x35c>
+    2d34:	9d 08 00 7c 	l.addi r8,r8,0x7c
+    2d38:	84 92 00 04 	l.lwz r4,0x4(r18)
+    2d3c:	ac 43 ff ff 	l.xori r2,r3,0xffffffff
+    2d40:	e0 44 10 03 	l.and r2,r4,r2
+    2d44:	03 ff ff c4 	l.j 2c54 <_malloc_r+0x848>
+    2d48:	d4 12 10 04 	l.sw 0x4(r18),r2
+
+00002d4c <__malloc_lock>:
+    2d4c:	44 00 48 00 	l.jr r9
+    2d50:	15 00 00 00 	l.nop 0x0
+
+00002d54 <__malloc_unlock>:
+    2d54:	44 00 48 00 	l.jr r9
+    2d58:	15 00 00 00 	l.nop 0x0
+
+00002d5c <or1k_dmmu_enable>:
+    2d5c:	b4 60 00 11 	l.mfspr r3,r0,0x11
+    2d60:	a8 63 00 20 	l.ori r3,r3,0x20
+    2d64:	c0 00 18 40 	l.mtspr r0,r3,0x40
+    2d68:	c0 00 48 20 	l.mtspr r0,r9,0x20
+    2d6c:	24 00 00 00 	l.rfe 
+    2d70:	15 00 00 00 	l.nop 0x0
+
+00002d74 <or1k_dmmu_disable>:
+    2d74:	a8 60 00 20 	l.ori r3,r0,0x20
+    2d78:	ac 83 ff ff 	l.xori r4,r3,0xffffffff
+    2d7c:	b4 60 00 11 	l.mfspr r3,r0,0x11
+    2d80:	e0 64 18 03 	l.and r3,r4,r3
+    2d84:	c0 00 18 40 	l.mtspr r0,r3,0x40
+    2d88:	c0 00 48 20 	l.mtspr r0,r9,0x20
+    2d8c:	24 00 00 00 	l.rfe 
+    2d90:	15 00 00 00 	l.nop 0x0
+
+00002d94 <or1k_immu_enable>:
+    2d94:	b4 60 00 11 	l.mfspr r3,r0,0x11
+    2d98:	a8 63 00 40 	l.ori r3,r3,0x40
+    2d9c:	c0 00 18 40 	l.mtspr r0,r3,0x40
+    2da0:	c0 00 48 20 	l.mtspr r0,r9,0x20
+    2da4:	24 00 00 00 	l.rfe 
+    2da8:	15 00 00 00 	l.nop 0x0
+
+00002dac <or1k_immu_disable>:
+    2dac:	a8 60 00 40 	l.ori r3,r0,0x40
+    2db0:	ac 83 ff ff 	l.xori r4,r3,0xffffffff
+    2db4:	b4 60 00 11 	l.mfspr r3,r0,0x11
+    2db8:	e0 64 18 03 	l.and r3,r4,r3
+    2dbc:	c0 00 18 40 	l.mtspr r0,r3,0x40
+    2dc0:	c0 00 48 20 	l.mtspr r0,r9,0x20
+    2dc4:	24 00 00 00 	l.rfe 
+    2dc8:	15 00 00 00 	l.nop 0x0
+
+00002dcc <or1k_cache_init>:
+    2dcc:	b4 60 00 01 	l.mfspr r3,r0,0x1
+    2dd0:	a4 83 00 04 	l.andi r4,r3,0x4
+    2dd4:	e4 04 00 00 	l.sfeq r4,r0
+    2dd8:	10 00 00 21 	l.bf 2e5c <or1k_cache_init+0x90>
+    2ddc:	15 00 00 00 	l.nop 0x0
+    2de0:	b4 c0 00 11 	l.mfspr r6,r0,0x11
+    2de4:	9c a0 ff ff 	l.addi r5,r0,0xffffffff
+    2de8:	ac a5 00 10 	l.xori r5,r5,0x10
+    2dec:	e0 a6 28 03 	l.and r5,r6,r5
+    2df0:	c0 00 28 11 	l.mtspr r0,r5,0x11
+    2df4:	b4 60 00 06 	l.mfspr r3,r0,0x6
+    2df8:	a4 83 00 80 	l.andi r4,r3,0x80
+    2dfc:	b8 e4 00 47 	l.srli r7,r4,0x7
+    2e00:	a9 00 00 10 	l.ori r8,r0,0x10
+    2e04:	e1 c8 38 08 	l.sll r14,r8,r7
+    2e08:	a4 83 00 78 	l.andi r4,r3,0x78
+    2e0c:	b8 e4 00 43 	l.srli r7,r4,0x3
+    2e10:	a9 00 00 01 	l.ori r8,r0,0x1
+    2e14:	e1 a8 38 08 	l.sll r13,r8,r7
+    2e18:	9c c0 00 00 	l.addi r6,r0,0x0
+    2e1c:	e0 ae 38 08 	l.sll r5,r14,r7
+    2e20:	c0 80 30 02 	l.mtspr r0,r6,0x2002
+    2e24:	e4 26 28 00 	l.sfne r6,r5
+    2e28:	13 ff ff fe 	l.bf 2e20 <or1k_cache_init+0x54>
+    2e2c:	e0 c6 70 00 	l.add r6,r6,r14
+    2e30:	b4 c0 00 11 	l.mfspr r6,r0,0x11
+    2e34:	a8 c6 00 10 	l.ori r6,r6,0x10
+    2e38:	c0 00 30 11 	l.mtspr r0,r6,0x11
+    2e3c:	15 00 00 00 	l.nop 0x0
+    2e40:	15 00 00 00 	l.nop 0x0
+    2e44:	15 00 00 00 	l.nop 0x0
+    2e48:	15 00 00 00 	l.nop 0x0
+    2e4c:	15 00 00 00 	l.nop 0x0
+    2e50:	15 00 00 00 	l.nop 0x0
+    2e54:	15 00 00 00 	l.nop 0x0
+    2e58:	15 00 00 00 	l.nop 0x0
+    2e5c:	b4 60 00 01 	l.mfspr r3,r0,0x1
+    2e60:	a4 83 00 02 	l.andi r4,r3,0x2
+    2e64:	e4 04 00 00 	l.sfeq r4,r0
+    2e68:	10 00 00 19 	l.bf 2ecc <or1k_cache_init+0x100>
+    2e6c:	15 00 00 00 	l.nop 0x0
+    2e70:	b4 c0 00 11 	l.mfspr r6,r0,0x11
+    2e74:	9c a0 ff ff 	l.addi r5,r0,0xffffffff
+    2e78:	ac a5 00 08 	l.xori r5,r5,0x8
+    2e7c:	e0 a6 28 03 	l.and r5,r6,r5
+    2e80:	c0 00 28 11 	l.mtspr r0,r5,0x11
+    2e84:	b4 60 00 05 	l.mfspr r3,r0,0x5
+    2e88:	a4 83 00 80 	l.andi r4,r3,0x80
+    2e8c:	b8 e4 00 47 	l.srli r7,r4,0x7
+    2e90:	a9 00 00 10 	l.ori r8,r0,0x10
+    2e94:	e1 c8 38 08 	l.sll r14,r8,r7
+    2e98:	a4 83 00 78 	l.andi r4,r3,0x78
+    2e9c:	b8 e4 00 43 	l.srli r7,r4,0x3
+    2ea0:	a9 00 00 01 	l.ori r8,r0,0x1
+    2ea4:	e1 a8 38 08 	l.sll r13,r8,r7
+    2ea8:	9c c0 00 00 	l.addi r6,r0,0x0
+    2eac:	e0 ae 38 08 	l.sll r5,r14,r7
+    2eb0:	c0 60 30 03 	l.mtspr r0,r6,0x1803
+    2eb4:	e4 26 28 00 	l.sfne r6,r5
+    2eb8:	13 ff ff fe 	l.bf 2eb0 <or1k_cache_init+0xe4>
+    2ebc:	e0 c6 70 00 	l.add r6,r6,r14
+    2ec0:	b4 c0 00 11 	l.mfspr r6,r0,0x11
+    2ec4:	a8 c6 00 08 	l.ori r6,r6,0x8
+    2ec8:	c0 00 30 11 	l.mtspr r0,r6,0x11
+    2ecc:	44 00 48 00 	l.jr r9
+    2ed0:	15 00 00 00 	l.nop 0x0
+
+00002ed4 <or1k_icache_enable>:
+    2ed4:	b5 a0 00 11 	l.mfspr r13,r0,0x11
+    2ed8:	a9 ad 00 10 	l.ori r13,r13,0x10
+    2edc:	c0 00 68 11 	l.mtspr r0,r13,0x11
+    2ee0:	15 00 00 00 	l.nop 0x0
+    2ee4:	15 00 00 00 	l.nop 0x0
+    2ee8:	15 00 00 00 	l.nop 0x0
+    2eec:	15 00 00 00 	l.nop 0x0
+    2ef0:	15 00 00 00 	l.nop 0x0
+    2ef4:	44 00 48 00 	l.jr r9
+    2ef8:	15 00 00 00 	l.nop 0x0
+
+00002efc <or1k_icache_disble>:
+    2efc:	b5 a0 00 11 	l.mfspr r13,r0,0x11
+    2f00:	9d 80 ff ff 	l.addi r12,r0,0xffffffff
+    2f04:	ad 8c 00 10 	l.xori r12,r12,0x10
+    2f08:	e1 8d 60 03 	l.and r12,r13,r12
+    2f0c:	c0 00 60 11 	l.mtspr r0,r12,0x11
+    2f10:	44 00 48 00 	l.jr r9
+    2f14:	15 00 00 00 	l.nop 0x0
+
+00002f18 <or1k_icache_flush>:
+    2f18:	44 00 48 00 	l.jr r9
+    2f1c:	c0 80 18 02 	l.mtspr r0,r3,0x2002
+
+00002f20 <or1k_dcache_enable>:
+    2f20:	b5 a0 00 11 	l.mfspr r13,r0,0x11
+    2f24:	a9 ad 00 08 	l.ori r13,r13,0x8
+    2f28:	c0 00 68 11 	l.mtspr r0,r13,0x11
+    2f2c:	15 00 00 00 	l.nop 0x0
+    2f30:	15 00 00 00 	l.nop 0x0
+    2f34:	15 00 00 00 	l.nop 0x0
+    2f38:	15 00 00 00 	l.nop 0x0
+    2f3c:	15 00 00 00 	l.nop 0x0
+    2f40:	44 00 48 00 	l.jr r9
+    2f44:	15 00 00 00 	l.nop 0x0
+
+00002f48 <or1k_dcache_disble>:
+    2f48:	b5 a0 00 11 	l.mfspr r13,r0,0x11
+    2f4c:	9d 80 ff ff 	l.addi r12,r0,0xffffffff
+    2f50:	ad 8c 00 08 	l.xori r12,r12,0x8
+    2f54:	e1 8d 60 03 	l.and r12,r13,r12
+    2f58:	c0 00 60 11 	l.mtspr r0,r12,0x11
+    2f5c:	44 00 48 00 	l.jr r9
+    2f60:	15 00 00 00 	l.nop 0x0
+
+00002f64 <or1k_dcache_flush>:
+    2f64:	44 00 48 00 	l.jr r9
+    2f68:	c0 60 18 03 	l.mtspr r0,r3,0x1803
+
+00002f6c <or1k_interrupt_handler>:
+    2f6c:	9c 21 ff f4 	l.addi r1,r1,0xfffffff4
+    2f70:	d4 01 48 00 	l.sw 0x0(r1),r9
+    2f74:	b4 60 48 02 	l.mfspr r3,r0,0x4802
+    2f78:	18 e0 00 00 	l.movhi r7,0x0
+    2f7c:	a8 e7 68 40 	l.ori r7,r7,0x6840
+    2f80:	19 00 ff ff 	l.movhi r8,0xffff
+    2f84:	a9 08 ff ff 	l.ori r8,r8,0xffff
+    2f88:	19 80 00 00 	l.movhi r12,0x0
+    2f8c:	a9 8c 68 c0 	l.ori r12,r12,0x68c0
+    2f90:	e0 83 00 0f 	l.ff1 r4,r3
+    2f94:	e4 24 00 00 	l.sfne r4,r0
+    2f98:	0c 00 00 14 	l.bnf 2fe8 <or1k_interrupt_handler+0x7c>
+    2f9c:	15 00 00 00 	l.nop 0x0
+    2fa0:	9c a4 ff ff 	l.addi r5,r4,0xffffffff
+    2fa4:	b8 c5 00 02 	l.slli r6,r5,0x2
+    2fa8:	e0 c6 38 00 	l.add r6,r6,r7
+    2fac:	e1 a6 60 00 	l.add r13,r6,r12
+    2fb0:	84 c6 00 00 	l.lwz r6,0x0(r6)
+    2fb4:	e4 26 40 00 	l.sfne r6,r8
+    2fb8:	0c 00 00 08 	l.bnf 2fd8 <or1k_interrupt_handler+0x6c>
+    2fbc:	15 00 00 00 	l.nop 0x0
+    2fc0:	d4 01 18 04 	l.sw 0x4(r1),r3
+    2fc4:	84 6d 00 00 	l.lwz r3,0x0(r13)
+    2fc8:	48 00 28 00 	l.jalr r5
+    2fcc:	d4 01 28 08 	l.sw 0x8(r1),r5
+    2fd0:	84 61 00 04 	l.lwz r3,0x4(r1)
+    2fd4:	84 a1 00 08 	l.lwz r5,0x8(r1)
+    2fd8:	a8 c0 00 01 	l.ori r6,r0,0x1
+    2fdc:	e0 c6 28 08 	l.sll r6,r6,r5
+    2fe0:	03 ff ff ec 	l.j 2f90 <or1k_interrupt_handler+0x24>
+    2fe4:	e0 63 30 05 	l.xor r3,r3,r6
+    2fe8:	85 21 00 00 	l.lwz r9,0x0(r1)
+    2fec:	c1 20 18 02 	l.mtspr r0,r3,0x4802
+    2ff0:	44 00 48 00 	l.jr r9
+    2ff4:	9c 21 00 0c 	l.addi r1,r1,0xc
+
+00002ff8 <or1k_interrupt_handler_add>:
+    2ff8:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    2ffc:	d4 01 30 00 	l.sw 0x0(r1),r6
+    3000:	b8 63 00 02 	l.slli r3,r3,0x2
+    3004:	9c 63 ff fc 	l.addi r3,r3,0xfffffffc
+    3008:	18 c0 00 00 	l.movhi r6,0x0
+    300c:	a8 c6 68 40 	l.ori r6,r6,0x6840
+    3010:	e0 c6 18 00 	l.add r6,r6,r3
+    3014:	d4 06 20 00 	l.sw 0x0(r6),r4
+    3018:	18 c0 00 00 	l.movhi r6,0x0
+    301c:	a8 c6 68 c0 	l.ori r6,r6,0x68c0
+    3020:	e0 c6 18 00 	l.add r6,r6,r3
+    3024:	d4 06 28 00 	l.sw 0x0(r6),r5
+    3028:	84 c1 00 00 	l.lwz r6,0x0(r1)
+    302c:	44 00 48 00 	l.jr r9
+    3030:	9c 21 00 04 	l.addi r1,r1,0x4
+
+00003034 <or1k_interrupt_enable>:
+    3034:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    3038:	d4 01 20 00 	l.sw 0x0(r1),r4
+    303c:	a8 80 00 01 	l.ori r4,r0,0x1
+    3040:	e0 84 18 08 	l.sll r4,r4,r3
+    3044:	b4 60 48 00 	l.mfspr r3,r0,0x4800
+    3048:	e0 63 20 04 	l.or r3,r3,r4
+    304c:	c1 20 18 00 	l.mtspr r0,r3,0x4800
+    3050:	84 81 00 00 	l.lwz r4,0x0(r1)
+    3054:	44 00 48 00 	l.jr r9
+    3058:	9c 21 00 04 	l.addi r1,r1,0x4
+
+0000305c <or1k_interrupt_disable>:
+    305c:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    3060:	d4 01 20 00 	l.sw 0x0(r1),r4
+    3064:	a8 80 00 01 	l.ori r4,r0,0x1
+    3068:	e0 84 18 08 	l.sll r4,r4,r3
+    306c:	ac 84 ff ff 	l.xori r4,r4,0xffffffff
+    3070:	b4 60 48 00 	l.mfspr r3,r0,0x4800
+    3074:	e0 63 20 03 	l.and r3,r3,r4
+    3078:	c1 20 18 00 	l.mtspr r0,r3,0x4800
+    307c:	84 81 00 00 	l.lwz r4,0x0(r1)
+    3080:	44 00 48 00 	l.jr r9
+    3084:	9c 21 00 04 	l.addi r1,r1,0x4
+
+00003088 <or1k_exception_handler>:
+    3088:	d4 01 10 00 	l.sw 0x0(r1),r2
+    308c:	d4 01 28 0c 	l.sw 0xc(r1),r5
+    3090:	d4 01 30 10 	l.sw 0x10(r1),r6
+    3094:	d4 01 38 14 	l.sw 0x14(r1),r7
+    3098:	d4 01 40 18 	l.sw 0x18(r1),r8
+    309c:	d4 01 48 1c 	l.sw 0x1c(r1),r9
+    30a0:	d4 01 50 20 	l.sw 0x20(r1),r10
+    30a4:	d4 01 58 24 	l.sw 0x24(r1),r11
+    30a8:	d4 01 60 28 	l.sw 0x28(r1),r12
+    30ac:	d4 01 68 2c 	l.sw 0x2c(r1),r13
+    30b0:	d4 01 70 30 	l.sw 0x30(r1),r14
+    30b4:	d4 01 78 34 	l.sw 0x34(r1),r15
+    30b8:	d4 01 80 38 	l.sw 0x38(r1),r16
+    30bc:	d4 01 88 3c 	l.sw 0x3c(r1),r17
+    30c0:	d4 01 90 40 	l.sw 0x40(r1),r18
+    30c4:	d4 01 98 44 	l.sw 0x44(r1),r19
+    30c8:	d4 01 a0 48 	l.sw 0x48(r1),r20
+    30cc:	d4 01 a8 4c 	l.sw 0x4c(r1),r21
+    30d0:	d4 01 b0 50 	l.sw 0x50(r1),r22
+    30d4:	d4 01 b8 54 	l.sw 0x54(r1),r23
+    30d8:	d4 01 c0 58 	l.sw 0x58(r1),r24
+    30dc:	d4 01 c8 5c 	l.sw 0x5c(r1),r25
+    30e0:	d4 01 d0 60 	l.sw 0x60(r1),r26
+    30e4:	d4 01 d8 64 	l.sw 0x64(r1),r27
+    30e8:	d4 01 e0 68 	l.sw 0x68(r1),r28
+    30ec:	d4 01 e8 6c 	l.sw 0x6c(r1),r29
+    30f0:	d4 01 f0 70 	l.sw 0x70(r1),r30
+    30f4:	d4 01 f8 74 	l.sw 0x74(r1),r31
+    30f8:	a5 a3 ff ff 	l.andi r13,r3,0xffff
+    30fc:	b9 ad 00 46 	l.srli r13,r13,0x6
+    3100:	9d ad ff f8 	l.addi r13,r13,0xfffffff8
+    3104:	19 c0 00 00 	l.movhi r14,0x0
+    3108:	a9 ce 69 40 	l.ori r14,r14,0x6940
+    310c:	e1 ce 68 00 	l.add r14,r14,r13
+    3110:	85 ae 00 00 	l.lwz r13,0x0(r14)
+    3114:	19 e0 ff ff 	l.movhi r15,0xffff
+    3118:	a9 ef ff ff 	l.ori r15,r15,0xffff
+    311c:	e4 2d 78 00 	l.sfne r13,r15
+    3120:	0c 00 00 25 	l.bnf 31b4 <exception_exit>
+    3124:	15 00 00 00 	l.nop 0x0
+    3128:	48 00 68 00 	l.jalr r13
+    312c:	e0 64 20 04 	l.or r3,r4,r4
+    3130:	84 41 00 00 	l.lwz r2,0x0(r1)
+    3134:	84 61 00 04 	l.lwz r3,0x4(r1)
+    3138:	84 81 00 08 	l.lwz r4,0x8(r1)
+    313c:	84 a1 00 0c 	l.lwz r5,0xc(r1)
+    3140:	84 c1 00 10 	l.lwz r6,0x10(r1)
+    3144:	84 e1 00 14 	l.lwz r7,0x14(r1)
+    3148:	85 01 00 18 	l.lwz r8,0x18(r1)
+    314c:	85 21 00 1c 	l.lwz r9,0x1c(r1)
+    3150:	85 41 00 20 	l.lwz r10,0x20(r1)
+    3154:	85 61 00 24 	l.lwz r11,0x24(r1)
+    3158:	85 81 00 28 	l.lwz r12,0x28(r1)
+    315c:	85 a1 00 2c 	l.lwz r13,0x2c(r1)
+    3160:	85 c1 00 30 	l.lwz r14,0x30(r1)
+    3164:	85 e1 00 34 	l.lwz r15,0x34(r1)
+    3168:	86 01 00 38 	l.lwz r16,0x38(r1)
+    316c:	86 21 00 3c 	l.lwz r17,0x3c(r1)
+    3170:	86 41 00 40 	l.lwz r18,0x40(r1)
+    3174:	86 61 00 44 	l.lwz r19,0x44(r1)
+    3178:	86 81 00 48 	l.lwz r20,0x48(r1)
+    317c:	86 a1 00 4c 	l.lwz r21,0x4c(r1)
+    3180:	86 c1 00 50 	l.lwz r22,0x50(r1)
+    3184:	86 e1 00 54 	l.lwz r23,0x54(r1)
+    3188:	87 01 00 58 	l.lwz r24,0x58(r1)
+    318c:	87 21 00 5c 	l.lwz r25,0x5c(r1)
+    3190:	87 41 00 60 	l.lwz r26,0x60(r1)
+    3194:	87 61 00 64 	l.lwz r27,0x64(r1)
+    3198:	87 81 00 68 	l.lwz r28,0x68(r1)
+    319c:	87 a1 00 6c 	l.lwz r29,0x6c(r1)
+    31a0:	87 c1 00 70 	l.lwz r30,0x70(r1)
+    31a4:	87 e1 00 74 	l.lwz r31,0x74(r1)
+    31a8:	9c 21 01 00 	l.addi r1,r1,0x100
+    31ac:	24 00 00 00 	l.rfe 
+    31b0:	15 00 00 00 	l.nop 0x0
+
+000031b4 <exception_exit>:
+    31b4:	07 ff fc 71 	l.jal 2378 <exit>
+    31b8:	e0 64 20 04 	l.or r3,r4,r4
+
+000031bc <or1k_exception_handler_add>:
+    31bc:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    31c0:	d4 01 28 00 	l.sw 0x0(r1),r5
+    31c4:	b8 63 00 02 	l.slli r3,r3,0x2
+    31c8:	9c 63 ff f8 	l.addi r3,r3,0xfffffff8
+    31cc:	18 a0 00 00 	l.movhi r5,0x0
+    31d0:	a8 a5 69 40 	l.ori r5,r5,0x6940
+    31d4:	e0 a5 18 00 	l.add r5,r5,r3
+    31d8:	d4 05 20 00 	l.sw 0x0(r5),r4
+    31dc:	84 a1 00 00 	l.lwz r5,0x0(r1)
+    31e0:	44 00 48 00 	l.jr r9
+    31e4:	9c 21 00 04 	l.addi r1,r1,0x4
+
+000031e8 <_sbrk_r>:
+    31e8:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
+    31ec:	18 40 00 00 	l.movhi r2,0x0
+    31f0:	d7 e1 77 f8 	l.sw 0xfffffff8(r1),r14
+    31f4:	a8 42 6a 0c 	l.ori r2,r2,0x6a0c
+    31f8:	a9 c3 00 00 	l.ori r14,r3,0x0
+    31fc:	a8 64 00 00 	l.ori r3,r4,0x0
+    3200:	9c 80 00 00 	l.addi r4,r0,0x0
+    3204:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3208:	d4 02 20 00 	l.sw 0x0(r2),r4
+    320c:	04 00 02 a6 	l.jal 3ca4 <_sbrk>
+    3210:	9c 21 ff f4 	l.addi r1,r1,0xfffffff4
+    3214:	bc 2b ff ff 	l.sfnei r11,0xffffffff
+    3218:	0c 00 00 07 	l.bnf 3234 <_sbrk_r+0x4c>
+    321c:	15 00 00 00 	l.nop 0x0
+    3220:	9c 21 00 0c 	l.addi r1,r1,0xc
+    3224:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3228:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
+    322c:	44 00 48 00 	l.jr r9
+    3230:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+    3234:	84 42 00 00 	l.lwz r2,0x0(r2)
+    3238:	bc 02 00 00 	l.sfeqi r2,0x0
+    323c:	13 ff ff f9 	l.bf 3220 <_sbrk_r+0x38>
+    3240:	15 00 00 00 	l.nop 0x0
+    3244:	d4 0e 10 00 	l.sw 0x0(r14),r2
+    3248:	9c 21 00 0c 	l.addi r1,r1,0xc
+    324c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3250:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
+    3254:	44 00 48 00 	l.jr r9
+    3258:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+
+0000325c <__register_exitproc>:
+    325c:	d7 e1 17 e4 	l.sw 0xffffffe4(r1),r2
+    3260:	a8 43 00 00 	l.ori r2,r3,0x0
+    3264:	18 60 00 00 	l.movhi r3,0x0
+    3268:	d7 e1 b7 f8 	l.sw 0xfffffff8(r1),r22
+    326c:	a8 63 3f e0 	l.ori r3,r3,0x3fe0
+    3270:	d7 e1 87 ec 	l.sw 0xffffffec(r1),r16
+    3274:	86 c3 00 00 	l.lwz r22,0x0(r3)
+    3278:	d7 e1 97 f0 	l.sw 0xfffffff0(r1),r18
+    327c:	d7 e1 a7 f4 	l.sw 0xfffffff4(r1),r20
+    3280:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3284:	d7 e1 77 e8 	l.sw 0xffffffe8(r1),r14
+    3288:	84 f6 01 48 	l.lwz r7,0x148(r22)
+    328c:	9c 21 ff e4 	l.addi r1,r1,0xffffffe4
+    3290:	aa 04 00 00 	l.ori r16,r4,0x0
+    3294:	aa 85 00 00 	l.ori r20,r5,0x0
+    3298:	bc 27 00 00 	l.sfnei r7,0x0
+    329c:	0c 00 00 2c 	l.bnf 334c <__register_exitproc+0xf0>
+    32a0:	aa 46 00 00 	l.ori r18,r6,0x0
+    32a4:	85 07 00 04 	l.lwz r8,0x4(r7)
+    32a8:	bd a8 00 1f 	l.sflesi r8,0x1f
+    32ac:	0c 00 00 2b 	l.bnf 3358 <__register_exitproc+0xfc>
+    32b0:	18 60 00 00 	l.movhi r3,0x0
+    32b4:	bc 02 00 00 	l.sfeqi r2,0x0
+    32b8:	0c 00 00 13 	l.bnf 3304 <__register_exitproc+0xa8>
+    32bc:	9c 88 00 42 	l.addi r4,r8,0x42
+    32c0:	9c 48 00 02 	l.addi r2,r8,0x2
+    32c4:	9d 08 00 01 	l.addi r8,r8,0x1
+    32c8:	b8 42 00 02 	l.slli r2,r2,0x2
+    32cc:	d4 07 40 04 	l.sw 0x4(r7),r8
+    32d0:	9d c0 00 00 	l.addi r14,r0,0x0
+    32d4:	e0 e7 10 00 	l.add r7,r7,r2
+    32d8:	d4 07 80 00 	l.sw 0x0(r7),r16
+    32dc:	9c 21 00 1c 	l.addi r1,r1,0x1c
+    32e0:	a9 6e 00 00 	l.ori r11,r14,0x0
+    32e4:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    32e8:	84 41 ff e4 	l.lwz r2,0xffffffe4(r1)
+    32ec:	85 c1 ff e8 	l.lwz r14,0xffffffe8(r1)
+    32f0:	86 01 ff ec 	l.lwz r16,0xffffffec(r1)
+    32f4:	86 41 ff f0 	l.lwz r18,0xfffffff0(r1)
+    32f8:	86 81 ff f4 	l.lwz r20,0xfffffff4(r1)
+    32fc:	44 00 48 00 	l.jr r9
+    3300:	86 c1 ff f8 	l.lwz r22,0xfffffff8(r1)
+    3304:	9c c8 00 22 	l.addi r6,r8,0x22
+    3308:	9c 60 00 01 	l.addi r3,r0,0x1
+    330c:	b8 c6 00 02 	l.slli r6,r6,0x2
+    3310:	e0 63 40 08 	l.sll r3,r3,r8
+    3314:	b8 84 00 02 	l.slli r4,r4,0x2
+    3318:	84 a7 01 88 	l.lwz r5,0x188(r7)
+    331c:	e0 c7 30 00 	l.add r6,r7,r6
+    3320:	e0 a5 18 04 	l.or r5,r5,r3
+    3324:	e0 87 20 00 	l.add r4,r7,r4
+    3328:	d4 06 a0 00 	l.sw 0x0(r6),r20
+    332c:	d4 07 29 88 	l.sw 0x188(r7),r5
+    3330:	bc 22 00 02 	l.sfnei r2,0x2
+    3334:	13 ff ff e3 	l.bf 32c0 <__register_exitproc+0x64>
+    3338:	d4 04 90 00 	l.sw 0x0(r4),r18
+    333c:	84 47 01 8c 	l.lwz r2,0x18c(r7)
+    3340:	e0 62 18 04 	l.or r3,r2,r3
+    3344:	03 ff ff df 	l.j 32c0 <__register_exitproc+0x64>
+    3348:	d4 07 19 8c 	l.sw 0x18c(r7),r3
+    334c:	9c f6 01 4c 	l.addi r7,r22,0x14c
+    3350:	03 ff ff d5 	l.j 32a4 <__register_exitproc+0x48>
+    3354:	d4 16 39 48 	l.sw 0x148(r22),r7
+    3358:	a8 63 23 bc 	l.ori r3,r3,0x23bc
+    335c:	bc 03 00 00 	l.sfeqi r3,0x0
+    3360:	13 ff ff df 	l.bf 32dc <__register_exitproc+0x80>
+    3364:	9d c0 ff ff 	l.addi r14,r0,0xffffffff
+    3368:	07 ff fc 15 	l.jal 23bc <malloc>
+    336c:	9c 60 01 90 	l.addi r3,r0,0x190
+    3370:	bc 0b 00 00 	l.sfeqi r11,0x0
+    3374:	13 ff ff da 	l.bf 32dc <__register_exitproc+0x80>
+    3378:	a8 eb 00 00 	l.ori r7,r11,0x0
+    337c:	84 76 01 48 	l.lwz r3,0x148(r22)
+    3380:	9c 80 00 00 	l.addi r4,r0,0x0
+    3384:	d4 0b 18 00 	l.sw 0x0(r11),r3
+    3388:	d4 0b 20 04 	l.sw 0x4(r11),r4
+    338c:	d4 16 59 48 	l.sw 0x148(r22),r11
+    3390:	d4 0b 21 88 	l.sw 0x188(r11),r4
+    3394:	d4 0b 21 8c 	l.sw 0x18c(r11),r4
+    3398:	03 ff ff c7 	l.j 32b4 <__register_exitproc+0x58>
+    339c:	a9 04 00 00 	l.ori r8,r4,0x0
+
+000033a0 <__call_exitprocs>:
+    33a0:	d7 e1 17 d4 	l.sw 0xffffffd4(r1),r2
+    33a4:	18 40 00 00 	l.movhi r2,0x0
+    33a8:	d7 e1 f7 f8 	l.sw 0xfffffff8(r1),r30
+    33ac:	a8 42 3f e0 	l.ori r2,r2,0x3fe0
+    33b0:	d7 e1 a7 e4 	l.sw 0xffffffe4(r1),r20
+    33b4:	87 c2 00 00 	l.lwz r30,0x0(r2)
+    33b8:	d7 e1 d7 f0 	l.sw 0xfffffff0(r1),r26
+    33bc:	d7 e1 e7 f4 	l.sw 0xfffffff4(r1),r28
+    33c0:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    33c4:	d7 e1 77 d8 	l.sw 0xffffffd8(r1),r14
+    33c8:	d7 e1 87 dc 	l.sw 0xffffffdc(r1),r16
+    33cc:	d7 e1 97 e0 	l.sw 0xffffffe0(r1),r18
+    33d0:	d7 e1 b7 e8 	l.sw 0xffffffe8(r1),r22
+    33d4:	d7 e1 c7 ec 	l.sw 0xffffffec(r1),r24
+    33d8:	9c 5e 01 48 	l.addi r2,r30,0x148
+    33dc:	9c 21 ff d0 	l.addi r1,r1,0xffffffd0
+    33e0:	ab 83 00 00 	l.ori r28,r3,0x0
+    33e4:	aa 84 00 00 	l.ori r20,r4,0x0
+    33e8:	d4 01 10 00 	l.sw 0x0(r1),r2
+    33ec:	9f 40 00 01 	l.addi r26,r0,0x1
+    33f0:	85 de 01 48 	l.lwz r14,0x148(r30)
+    33f4:	bc 0e 00 00 	l.sfeqi r14,0x0
+    33f8:	10 00 00 41 	l.bf 34fc <__call_exitprocs+0x15c>
+    33fc:	86 c1 00 00 	l.lwz r22,0x0(r1)
+    3400:	84 8e 00 04 	l.lwz r4,0x4(r14)
+    3404:	9c 44 ff ff 	l.addi r2,r4,0xffffffff
+    3408:	bd 82 00 00 	l.sfltsi r2,0x0
+    340c:	10 00 00 37 	l.bf 34e8 <__call_exitprocs+0x148>
+    3410:	15 00 00 00 	l.nop 0x0
+    3414:	9e 04 00 21 	l.addi r16,r4,0x21
+    3418:	9e 44 00 01 	l.addi r18,r4,0x1
+    341c:	ba 10 00 02 	l.slli r16,r16,0x2
+    3420:	ba 52 00 02 	l.slli r18,r18,0x2
+    3424:	e2 0e 80 00 	l.add r16,r14,r16
+    3428:	00 00 00 0b 	l.j 3454 <__call_exitprocs+0xb4>
+    342c:	e2 4e 90 00 	l.add r18,r14,r18
+    3430:	84 90 00 80 	l.lwz r4,0x80(r16)
+    3434:	e4 24 a0 00 	l.sfne r4,r20
+    3438:	0c 00 00 0a 	l.bnf 3460 <__call_exitprocs+0xc0>
+    343c:	15 00 00 00 	l.nop 0x0
+    3440:	9c 42 ff ff 	l.addi r2,r2,0xffffffff
+    3444:	9e 10 ff fc 	l.addi r16,r16,0xfffffffc
+    3448:	bd 62 00 00 	l.sfgesi r2,0x0
+    344c:	0c 00 00 27 	l.bnf 34e8 <__call_exitprocs+0x148>
+    3450:	9e 52 ff fc 	l.addi r18,r18,0xfffffffc
+    3454:	bc 14 00 00 	l.sfeqi r20,0x0
+    3458:	0f ff ff f6 	l.bnf 3430 <__call_exitprocs+0x90>
+    345c:	15 00 00 00 	l.nop 0x0
+    3460:	84 8e 00 04 	l.lwz r4,0x4(r14)
+    3464:	9c 84 ff ff 	l.addi r4,r4,0xffffffff
+    3468:	e4 24 10 00 	l.sfne r4,r2
+    346c:	0c 00 00 35 	l.bnf 3540 <__call_exitprocs+0x1a0>
+    3470:	84 b2 00 00 	l.lwz r5,0x0(r18)
+    3474:	9c 60 00 00 	l.addi r3,r0,0x0
+    3478:	d4 12 18 00 	l.sw 0x0(r18),r3
+    347c:	bc 05 00 00 	l.sfeqi r5,0x0
+    3480:	13 ff ff f0 	l.bf 3440 <__call_exitprocs+0xa0>
+    3484:	e0 9a 10 08 	l.sll r4,r26,r2
+    3488:	84 ce 01 88 	l.lwz r6,0x188(r14)
+    348c:	e0 c4 30 03 	l.and r6,r4,r6
+    3490:	bc 26 00 00 	l.sfnei r6,0x0
+    3494:	0c 00 00 27 	l.bnf 3530 <__call_exitprocs+0x190>
+    3498:	87 0e 00 04 	l.lwz r24,0x4(r14)
+    349c:	84 ce 01 8c 	l.lwz r6,0x18c(r14)
+    34a0:	e0 84 30 03 	l.and r4,r4,r6
+    34a4:	bc 24 00 00 	l.sfnei r4,0x0
+    34a8:	10 00 00 28 	l.bf 3548 <__call_exitprocs+0x1a8>
+    34ac:	a8 7c 00 00 	l.ori r3,r28,0x0
+    34b0:	48 00 28 00 	l.jalr r5
+    34b4:	84 90 00 00 	l.lwz r4,0x0(r16)
+    34b8:	84 8e 00 04 	l.lwz r4,0x4(r14)
+    34bc:	e4 24 c0 00 	l.sfne r4,r24
+    34c0:	13 ff ff cc 	l.bf 33f0 <__call_exitprocs+0x50>
+    34c4:	15 00 00 00 	l.nop 0x0
+    34c8:	84 96 00 00 	l.lwz r4,0x0(r22)
+    34cc:	e4 24 70 00 	l.sfne r4,r14
+    34d0:	13 ff ff c8 	l.bf 33f0 <__call_exitprocs+0x50>
+    34d4:	9c 42 ff ff 	l.addi r2,r2,0xffffffff
+    34d8:	9e 10 ff fc 	l.addi r16,r16,0xfffffffc
+    34dc:	bd 62 00 00 	l.sfgesi r2,0x0
+    34e0:	13 ff ff dd 	l.bf 3454 <__call_exitprocs+0xb4>
+    34e4:	9e 52 ff fc 	l.addi r18,r18,0xfffffffc
+    34e8:	18 40 00 00 	l.movhi r2,0x0
+    34ec:	a8 42 23 e4 	l.ori r2,r2,0x23e4
+    34f0:	bc 02 00 00 	l.sfeqi r2,0x0
+    34f4:	0c 00 00 19 	l.bnf 3558 <__call_exitprocs+0x1b8>
+    34f8:	15 00 00 00 	l.nop 0x0
+    34fc:	9c 21 00 30 	l.addi r1,r1,0x30
+    3500:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3504:	84 41 ff d4 	l.lwz r2,0xffffffd4(r1)
+    3508:	85 c1 ff d8 	l.lwz r14,0xffffffd8(r1)
+    350c:	86 01 ff dc 	l.lwz r16,0xffffffdc(r1)
+    3510:	86 41 ff e0 	l.lwz r18,0xffffffe0(r1)
+    3514:	86 81 ff e4 	l.lwz r20,0xffffffe4(r1)
+    3518:	86 c1 ff e8 	l.lwz r22,0xffffffe8(r1)
+    351c:	87 01 ff ec 	l.lwz r24,0xffffffec(r1)
+    3520:	87 41 ff f0 	l.lwz r26,0xfffffff0(r1)
+    3524:	87 81 ff f4 	l.lwz r28,0xfffffff4(r1)
+    3528:	44 00 48 00 	l.jr r9
+    352c:	87 c1 ff f8 	l.lwz r30,0xfffffff8(r1)
+    3530:	48 00 28 00 	l.jalr r5
+    3534:	15 00 00 00 	l.nop 0x0
+    3538:	03 ff ff e1 	l.j 34bc <__call_exitprocs+0x11c>
+    353c:	84 8e 00 04 	l.lwz r4,0x4(r14)
+    3540:	03 ff ff cf 	l.j 347c <__call_exitprocs+0xdc>
+    3544:	d4 0e 10 04 	l.sw 0x4(r14),r2
+    3548:	48 00 28 00 	l.jalr r5
+    354c:	84 70 00 00 	l.lwz r3,0x0(r16)
+    3550:	03 ff ff db 	l.j 34bc <__call_exitprocs+0x11c>
+    3554:	84 8e 00 04 	l.lwz r4,0x4(r14)
+    3558:	84 4e 00 04 	l.lwz r2,0x4(r14)
+    355c:	bc 22 00 00 	l.sfnei r2,0x0
+    3560:	0c 00 00 0a 	l.bnf 3588 <__call_exitprocs+0x1e8>
+    3564:	15 00 00 00 	l.nop 0x0
+    3568:	84 4e 00 00 	l.lwz r2,0x0(r14)
+    356c:	aa ce 00 00 	l.ori r22,r14,0x0
+    3570:	a9 c2 00 00 	l.ori r14,r2,0x0
+    3574:	bc 2e 00 00 	l.sfnei r14,0x0
+    3578:	13 ff ff a2 	l.bf 3400 <__call_exitprocs+0x60>
+    357c:	15 00 00 00 	l.nop 0x0
+    3580:	03 ff ff e0 	l.j 3500 <__call_exitprocs+0x160>
+    3584:	9c 21 00 30 	l.addi r1,r1,0x30
+    3588:	84 4e 00 00 	l.lwz r2,0x0(r14)
+    358c:	bc 02 00 00 	l.sfeqi r2,0x0
+    3590:	13 ff ff f7 	l.bf 356c <__call_exitprocs+0x1cc>
+    3594:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3598:	07 ff fb 93 	l.jal 23e4 <free>
+    359c:	d4 16 10 00 	l.sw 0x0(r22),r2
+    35a0:	03 ff ff f5 	l.j 3574 <__call_exitprocs+0x1d4>
+    35a4:	85 d6 00 00 	l.lwz r14,0x0(r22)
+
+000035a8 <_malloc_trim_r>:
+    35a8:	d7 e1 17 ec 	l.sw 0xffffffec(r1),r2
+    35ac:	18 40 00 00 	l.movhi r2,0x0
+    35b0:	d7 e1 77 f0 	l.sw 0xfffffff0(r1),r14
+    35b4:	d7 e1 87 f4 	l.sw 0xfffffff4(r1),r16
+    35b8:	d7 e1 97 f8 	l.sw 0xfffffff8(r1),r18
+    35bc:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    35c0:	9c 21 ff ec 	l.addi r1,r1,0xffffffec
+    35c4:	a8 42 64 30 	l.ori r2,r2,0x6430
+    35c8:	aa 44 00 00 	l.ori r18,r4,0x0
+    35cc:	07 ff fd e0 	l.jal 2d4c <__malloc_lock>
+    35d0:	a9 c3 00 00 	l.ori r14,r3,0x0
+    35d4:	84 62 00 08 	l.lwz r3,0x8(r2)
+    35d8:	86 03 00 04 	l.lwz r16,0x4(r3)
+    35dc:	9c 60 ff fc 	l.addi r3,r0,0xfffffffc
+    35e0:	e2 10 18 03 	l.and r16,r16,r3
+    35e4:	9c 70 0f ef 	l.addi r3,r16,0xfef
+    35e8:	e2 43 90 02 	l.sub r18,r3,r18
+    35ec:	9c 60 f0 00 	l.addi r3,r0,0xfffff000
+    35f0:	e2 52 18 03 	l.and r18,r18,r3
+    35f4:	e2 52 18 00 	l.add r18,r18,r3
+    35f8:	bd 52 0f ff 	l.sfgtsi r18,0xfff
+    35fc:	0c 00 00 09 	l.bnf 3620 <_malloc_trim_r+0x78>
+    3600:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3604:	07 ff fe f9 	l.jal 31e8 <_sbrk_r>
+    3608:	9c 80 00 00 	l.addi r4,r0,0x0
+    360c:	84 62 00 08 	l.lwz r3,0x8(r2)
+    3610:	e0 63 80 00 	l.add r3,r3,r16
+    3614:	e4 0b 18 00 	l.sfeq r11,r3
+    3618:	10 00 00 0c 	l.bf 3648 <_malloc_trim_r+0xa0>
+    361c:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3620:	07 ff fd cd 	l.jal 2d54 <__malloc_unlock>
+    3624:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3628:	9c 21 00 14 	l.addi r1,r1,0x14
+    362c:	9d 60 00 00 	l.addi r11,r0,0x0
+    3630:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3634:	84 41 ff ec 	l.lwz r2,0xffffffec(r1)
+    3638:	85 c1 ff f0 	l.lwz r14,0xfffffff0(r1)
+    363c:	86 01 ff f4 	l.lwz r16,0xfffffff4(r1)
+    3640:	44 00 48 00 	l.jr r9
+    3644:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
+    3648:	07 ff fe e8 	l.jal 31e8 <_sbrk_r>
+    364c:	e0 80 90 02 	l.sub r4,r0,r18
+    3650:	bc 2b ff ff 	l.sfnei r11,0xffffffff
+    3654:	0c 00 00 14 	l.bnf 36a4 <_malloc_trim_r+0xfc>
+    3658:	18 80 00 00 	l.movhi r4,0x0
+    365c:	e2 10 90 02 	l.sub r16,r16,r18
+    3660:	a8 84 69 e4 	l.ori r4,r4,0x69e4
+    3664:	84 42 00 08 	l.lwz r2,0x8(r2)
+    3668:	84 64 00 00 	l.lwz r3,0x0(r4)
+    366c:	aa 10 00 01 	l.ori r16,r16,0x1
+    3670:	e2 43 90 02 	l.sub r18,r3,r18
+    3674:	d4 02 80 04 	l.sw 0x4(r2),r16
+    3678:	a8 6e 00 00 	l.ori r3,r14,0x0
+    367c:	07 ff fd b6 	l.jal 2d54 <__malloc_unlock>
+    3680:	d4 04 90 00 	l.sw 0x0(r4),r18
+    3684:	9c 21 00 14 	l.addi r1,r1,0x14
+    3688:	9d 60 00 01 	l.addi r11,r0,0x1
+    368c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3690:	84 41 ff ec 	l.lwz r2,0xffffffec(r1)
+    3694:	85 c1 ff f0 	l.lwz r14,0xfffffff0(r1)
+    3698:	86 01 ff f4 	l.lwz r16,0xfffffff4(r1)
+    369c:	44 00 48 00 	l.jr r9
+    36a0:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
+    36a4:	a8 6e 00 00 	l.ori r3,r14,0x0
+    36a8:	07 ff fe d0 	l.jal 31e8 <_sbrk_r>
+    36ac:	9c 80 00 00 	l.addi r4,r0,0x0
+    36b0:	84 42 00 08 	l.lwz r2,0x8(r2)
+    36b4:	e0 6b 10 02 	l.sub r3,r11,r2
+    36b8:	bd a3 00 0f 	l.sflesi r3,0xf
+    36bc:	13 ff ff d9 	l.bf 3620 <_malloc_trim_r+0x78>
+    36c0:	18 80 00 00 	l.movhi r4,0x0
+    36c4:	a8 63 00 01 	l.ori r3,r3,0x1
+    36c8:	a8 84 68 3c 	l.ori r4,r4,0x683c
+    36cc:	d4 02 18 04 	l.sw 0x4(r2),r3
+    36d0:	84 84 00 00 	l.lwz r4,0x0(r4)
+    36d4:	18 40 00 00 	l.movhi r2,0x0
+    36d8:	e1 6b 20 02 	l.sub r11,r11,r4
+    36dc:	a8 42 69 e4 	l.ori r2,r2,0x69e4
+    36e0:	03 ff ff d0 	l.j 3620 <_malloc_trim_r+0x78>
+    36e4:	d4 02 58 00 	l.sw 0x0(r2),r11
+
+000036e8 <_free_r>:
+    36e8:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
+    36ec:	d7 e1 77 f8 	l.sw 0xfffffff8(r1),r14
+    36f0:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    36f4:	a9 c4 00 00 	l.ori r14,r4,0x0
+    36f8:	9c 21 ff f4 	l.addi r1,r1,0xfffffff4
+    36fc:	bc 04 00 00 	l.sfeqi r4,0x0
+    3700:	10 00 00 62 	l.bf 3888 <_free_r+0x1a0>
+    3704:	a8 43 00 00 	l.ori r2,r3,0x0
+    3708:	07 ff fd 91 	l.jal 2d4c <__malloc_lock>
+    370c:	15 00 00 00 	l.nop 0x0
+    3710:	9c 8e ff f8 	l.addi r4,r14,0xfffffff8
+    3714:	9c 60 ff fe 	l.addi r3,r0,0xfffffffe
+    3718:	18 e0 00 00 	l.movhi r7,0x0
+    371c:	85 04 00 04 	l.lwz r8,0x4(r4)
+    3720:	a8 e7 64 30 	l.ori r7,r7,0x6430
+    3724:	e0 a8 18 03 	l.and r5,r8,r3
+    3728:	85 67 00 08 	l.lwz r11,0x8(r7)
+    372c:	e0 c4 28 00 	l.add r6,r4,r5
+    3730:	84 66 00 04 	l.lwz r3,0x4(r6)
+    3734:	e4 2b 30 00 	l.sfne r11,r6
+    3738:	9d 60 ff fc 	l.addi r11,r0,0xfffffffc
+    373c:	0c 00 00 7c 	l.bnf 392c <_free_r+0x244>
+    3740:	e0 63 58 03 	l.and r3,r3,r11
+    3744:	a5 08 00 01 	l.andi r8,r8,0x1
+    3748:	9d 60 00 00 	l.addi r11,r0,0x0
+    374c:	e4 28 58 00 	l.sfne r8,r11
+    3750:	10 00 00 0f 	l.bf 378c <_free_r+0xa4>
+    3754:	d4 06 18 04 	l.sw 0x4(r6),r3
+    3758:	85 84 00 00 	l.lwz r12,0x0(r4)
+    375c:	19 a0 00 00 	l.movhi r13,0x0
+    3760:	e0 84 60 02 	l.sub r4,r4,r12
+    3764:	e0 a5 60 00 	l.add r5,r5,r12
+    3768:	a9 ad 64 38 	l.ori r13,r13,0x6438
+    376c:	85 84 00 08 	l.lwz r12,0x8(r4)
+    3770:	e4 0c 68 00 	l.sfeq r12,r13
+    3774:	10 00 00 06 	l.bf 378c <_free_r+0xa4>
+    3778:	9d 60 00 01 	l.addi r11,r0,0x1
+    377c:	85 a4 00 0c 	l.lwz r13,0xc(r4)
+    3780:	a9 68 00 00 	l.ori r11,r8,0x0
+    3784:	d4 0c 68 0c 	l.sw 0xc(r12),r13
+    3788:	d4 0d 60 08 	l.sw 0x8(r13),r12
+    378c:	e1 06 18 00 	l.add r8,r6,r3
+    3790:	85 08 00 04 	l.lwz r8,0x4(r8)
+    3794:	a5 08 00 01 	l.andi r8,r8,0x1
+    3798:	bc 28 00 00 	l.sfnei r8,0x0
+    379c:	10 00 00 08 	l.bf 37bc <_free_r+0xd4>
+    37a0:	bc 2b 00 00 	l.sfnei r11,0x0
+    37a4:	0c 00 00 3e 	l.bnf 389c <_free_r+0x1b4>
+    37a8:	e0 a5 18 00 	l.add r5,r5,r3
+    37ac:	84 66 00 08 	l.lwz r3,0x8(r6)
+    37b0:	84 c6 00 0c 	l.lwz r6,0xc(r6)
+    37b4:	d4 03 30 0c 	l.sw 0xc(r3),r6
+    37b8:	d4 06 18 08 	l.sw 0x8(r6),r3
+    37bc:	a8 c5 00 01 	l.ori r6,r5,0x1
+    37c0:	e0 64 28 00 	l.add r3,r4,r5
+    37c4:	d4 04 30 04 	l.sw 0x4(r4),r6
+    37c8:	bc 2b 00 00 	l.sfnei r11,0x0
+    37cc:	10 00 00 29 	l.bf 3870 <_free_r+0x188>
+    37d0:	d4 03 28 00 	l.sw 0x0(r3),r5
+    37d4:	bc 45 01 ff 	l.sfgtui r5,0x1ff
+    37d8:	0c 00 00 40 	l.bnf 38d8 <_free_r+0x1f0>
+    37dc:	9c c0 00 01 	l.addi r6,r0,0x1
+    37e0:	b8 65 00 49 	l.srli r3,r5,0x9
+    37e4:	bc 43 00 04 	l.sfgtui r3,0x4
+    37e8:	10 00 00 6b 	l.bf 3994 <_free_r+0x2ac>
+    37ec:	bc 43 00 14 	l.sfgtui r3,0x14
+    37f0:	b9 05 00 46 	l.srli r8,r5,0x6
+    37f4:	9d 08 00 38 	l.addi r8,r8,0x38
+    37f8:	b8 68 00 03 	l.slli r3,r8,0x3
+    37fc:	19 a0 00 00 	l.movhi r13,0x0
+    3800:	a9 ad 64 30 	l.ori r13,r13,0x6430
+    3804:	e0 63 68 00 	l.add r3,r3,r13
+    3808:	84 c3 00 08 	l.lwz r6,0x8(r3)
+    380c:	e4 06 18 00 	l.sfeq r6,r3
+    3810:	10 00 00 66 	l.bf 39a8 <_free_r+0x2c0>
+    3814:	b9 08 00 82 	l.srai r8,r8,0x2
+    3818:	84 e6 00 04 	l.lwz r7,0x4(r6)
+    381c:	9d 00 ff fc 	l.addi r8,r0,0xfffffffc
+    3820:	e0 e7 40 03 	l.and r7,r7,r8
+    3824:	e4 85 38 00 	l.sfltu r5,r7
+    3828:	10 00 00 09 	l.bf 384c <_free_r+0x164>
+    382c:	15 00 00 00 	l.nop 0x0
+    3830:	00 00 00 0c 	l.j 3860 <_free_r+0x178>
+    3834:	84 66 00 0c 	l.lwz r3,0xc(r6)
+    3838:	84 e6 00 04 	l.lwz r7,0x4(r6)
+    383c:	e0 e7 58 03 	l.and r7,r7,r11
+    3840:	e4 85 38 00 	l.sfltu r5,r7
+    3844:	0c 00 00 06 	l.bnf 385c <_free_r+0x174>
+    3848:	15 00 00 00 	l.nop 0x0
+    384c:	84 c6 00 08 	l.lwz r6,0x8(r6)
+    3850:	e4 03 30 00 	l.sfeq r3,r6
+    3854:	0f ff ff f9 	l.bnf 3838 <_free_r+0x150>
+    3858:	9d 60 ff fc 	l.addi r11,r0,0xfffffffc
+    385c:	84 66 00 0c 	l.lwz r3,0xc(r6)
+    3860:	d4 04 18 0c 	l.sw 0xc(r4),r3
+    3864:	d4 04 30 08 	l.sw 0x8(r4),r6
+    3868:	d4 03 20 08 	l.sw 0x8(r3),r4
+    386c:	d4 06 20 0c 	l.sw 0xc(r6),r4
+    3870:	9c 21 00 0c 	l.addi r1,r1,0xc
+    3874:	a8 62 00 00 	l.ori r3,r2,0x0
+    3878:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    387c:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
+    3880:	03 ff fd 35 	l.j 2d54 <__malloc_unlock>
+    3884:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+    3888:	9c 21 00 0c 	l.addi r1,r1,0xc
+    388c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3890:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
+    3894:	44 00 48 00 	l.jr r9
+    3898:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+    389c:	19 00 00 00 	l.movhi r8,0x0
+    38a0:	84 66 00 08 	l.lwz r3,0x8(r6)
+    38a4:	a9 08 64 38 	l.ori r8,r8,0x6438
+    38a8:	e4 23 40 00 	l.sfne r3,r8
+    38ac:	13 ff ff c1 	l.bf 37b0 <_free_r+0xc8>
+    38b0:	15 00 00 00 	l.nop 0x0
+    38b4:	a8 e5 00 01 	l.ori r7,r5,0x1
+    38b8:	e0 c4 28 00 	l.add r6,r4,r5
+    38bc:	d4 03 20 0c 	l.sw 0xc(r3),r4
+    38c0:	d4 03 20 08 	l.sw 0x8(r3),r4
+    38c4:	d4 04 18 0c 	l.sw 0xc(r4),r3
+    38c8:	d4 04 18 08 	l.sw 0x8(r4),r3
+    38cc:	d4 04 38 04 	l.sw 0x4(r4),r7
+    38d0:	03 ff ff e8 	l.j 3870 <_free_r+0x188>
+    38d4:	d4 06 28 00 	l.sw 0x0(r6),r5
+    38d8:	b8 a5 00 43 	l.srli r5,r5,0x3
+    38dc:	19 60 00 00 	l.movhi r11,0x0
+    38e0:	b8 65 00 82 	l.srai r3,r5,0x2
+    38e4:	b8 a5 00 03 	l.slli r5,r5,0x3
+    38e8:	a9 6b 64 30 	l.ori r11,r11,0x6430
+    38ec:	e0 c6 18 08 	l.sll r6,r6,r3
+    38f0:	e0 a5 58 00 	l.add r5,r5,r11
+    38f4:	85 07 00 04 	l.lwz r8,0x4(r7)
+    38f8:	84 65 00 08 	l.lwz r3,0x8(r5)
+    38fc:	e0 c8 30 04 	l.or r6,r8,r6
+    3900:	d4 04 18 08 	l.sw 0x8(r4),r3
+    3904:	d4 04 28 0c 	l.sw 0xc(r4),r5
+    3908:	d4 03 20 0c 	l.sw 0xc(r3),r4
+    390c:	d4 07 30 04 	l.sw 0x4(r7),r6
+    3910:	d4 05 20 08 	l.sw 0x8(r5),r4
+    3914:	9c 21 00 0c 	l.addi r1,r1,0xc
+    3918:	a8 62 00 00 	l.ori r3,r2,0x0
+    391c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3920:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
+    3924:	03 ff fd 0c 	l.j 2d54 <__malloc_unlock>
+    3928:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+    392c:	a5 08 00 01 	l.andi r8,r8,0x1
+    3930:	bc 28 00 00 	l.sfnei r8,0x0
+    3934:	10 00 00 09 	l.bf 3958 <_free_r+0x270>
+    3938:	e0 a3 28 00 	l.add r5,r3,r5
+    393c:	84 64 00 00 	l.lwz r3,0x0(r4)
+    3940:	e0 84 18 02 	l.sub r4,r4,r3
+    3944:	e0 a5 18 00 	l.add r5,r5,r3
+    3948:	84 c4 00 08 	l.lwz r6,0x8(r4)
+    394c:	84 64 00 0c 	l.lwz r3,0xc(r4)
+    3950:	d4 06 18 0c 	l.sw 0xc(r6),r3
+    3954:	d4 03 30 08 	l.sw 0x8(r3),r6
+    3958:	a8 65 00 01 	l.ori r3,r5,0x1
+    395c:	d4 07 20 08 	l.sw 0x8(r7),r4
+    3960:	d4 04 18 04 	l.sw 0x4(r4),r3
+    3964:	18 60 00 00 	l.movhi r3,0x0
+    3968:	a8 63 68 38 	l.ori r3,r3,0x6838
+    396c:	84 63 00 00 	l.lwz r3,0x0(r3)
+    3970:	e4 85 18 00 	l.sfltu r5,r3
+    3974:	13 ff ff bf 	l.bf 3870 <_free_r+0x188>
+    3978:	18 80 00 00 	l.movhi r4,0x0
+    397c:	a8 62 00 00 	l.ori r3,r2,0x0
+    3980:	a8 84 69 d8 	l.ori r4,r4,0x69d8
+    3984:	07 ff ff 09 	l.jal 35a8 <_malloc_trim_r>
+    3988:	84 84 00 00 	l.lwz r4,0x0(r4)
+    398c:	03 ff ff ba 	l.j 3874 <_free_r+0x18c>
+    3990:	9c 21 00 0c 	l.addi r1,r1,0xc
+    3994:	10 00 00 0c 	l.bf 39c4 <_free_r+0x2dc>
+    3998:	bc 43 00 54 	l.sfgtui r3,0x54
+    399c:	9d 03 00 5b 	l.addi r8,r3,0x5b
+    39a0:	03 ff ff 97 	l.j 37fc <_free_r+0x114>
+    39a4:	b8 68 00 03 	l.slli r3,r8,0x3
+    39a8:	9c 60 00 01 	l.addi r3,r0,0x1
+    39ac:	85 67 00 04 	l.lwz r11,0x4(r7)
+    39b0:	e0 a3 40 08 	l.sll r5,r3,r8
+    39b4:	a8 66 00 00 	l.ori r3,r6,0x0
+    39b8:	e0 ab 28 04 	l.or r5,r11,r5
+    39bc:	03 ff ff a9 	l.j 3860 <_free_r+0x178>
+    39c0:	d4 07 28 04 	l.sw 0x4(r7),r5
+    39c4:	10 00 00 06 	l.bf 39dc <_free_r+0x2f4>
+    39c8:	bc 43 01 54 	l.sfgtui r3,0x154
+    39cc:	b9 05 00 4c 	l.srli r8,r5,0xc
+    39d0:	9d 08 00 6e 	l.addi r8,r8,0x6e
+    39d4:	03 ff ff 8a 	l.j 37fc <_free_r+0x114>
+    39d8:	b8 68 00 03 	l.slli r3,r8,0x3
+    39dc:	10 00 00 06 	l.bf 39f4 <_free_r+0x30c>
+    39e0:	bc 43 05 54 	l.sfgtui r3,0x554
+    39e4:	b9 05 00 4f 	l.srli r8,r5,0xf
+    39e8:	9d 08 00 77 	l.addi r8,r8,0x77
+    39ec:	03 ff ff 84 	l.j 37fc <_free_r+0x114>
+    39f0:	b8 68 00 03 	l.slli r3,r8,0x3
+    39f4:	10 00 00 06 	l.bf 3a0c <_free_r+0x324>
+    39f8:	15 00 00 00 	l.nop 0x0
+    39fc:	b9 05 00 52 	l.srli r8,r5,0x12
+    3a00:	9d 08 00 7c 	l.addi r8,r8,0x7c
+    3a04:	03 ff ff 7e 	l.j 37fc <_free_r+0x114>
+    3a08:	b8 68 00 03 	l.slli r3,r8,0x3
+    3a0c:	9c 60 03 f0 	l.addi r3,r0,0x3f0
+    3a10:	03 ff ff 7b 	l.j 37fc <_free_r+0x114>
+    3a14:	9d 00 00 7e 	l.addi r8,r0,0x7e
+
+00003a18 <cleanup_glue>:
+    3a18:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
+    3a1c:	d7 e1 77 f8 	l.sw 0xfffffff8(r1),r14
+    3a20:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3a24:	a8 44 00 00 	l.ori r2,r4,0x0
+    3a28:	84 84 00 00 	l.lwz r4,0x0(r4)
+    3a2c:	9c 21 ff f4 	l.addi r1,r1,0xfffffff4
+    3a30:	bc 04 00 00 	l.sfeqi r4,0x0
+    3a34:	10 00 00 04 	l.bf 3a44 <cleanup_glue+0x2c>
+    3a38:	a9 c3 00 00 	l.ori r14,r3,0x0
+    3a3c:	07 ff ff f7 	l.jal 3a18 <cleanup_glue>
+    3a40:	15 00 00 00 	l.nop 0x0
+    3a44:	9c 21 00 0c 	l.addi r1,r1,0xc
+    3a48:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3a4c:	a8 82 00 00 	l.ori r4,r2,0x0
+    3a50:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3a54:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
+    3a58:	03 ff ff 24 	l.j 36e8 <_free_r>
+    3a5c:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+
+00003a60 <_reclaim_reent>:
+    3a60:	d7 e1 17 ec 	l.sw 0xffffffec(r1),r2
+    3a64:	18 40 00 00 	l.movhi r2,0x0
+    3a68:	d7 e1 77 f0 	l.sw 0xfffffff0(r1),r14
+    3a6c:	a8 42 60 08 	l.ori r2,r2,0x6008
+    3a70:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3a74:	d7 e1 87 f4 	l.sw 0xfffffff4(r1),r16
+    3a78:	d7 e1 97 f8 	l.sw 0xfffffff8(r1),r18
+    3a7c:	84 42 00 00 	l.lwz r2,0x0(r2)
+    3a80:	9c 21 ff ec 	l.addi r1,r1,0xffffffec
+    3a84:	e4 03 10 00 	l.sfeq r3,r2
+    3a88:	10 00 00 3a 	l.bf 3b70 <_reclaim_reent+0x110>
+    3a8c:	a9 c3 00 00 	l.ori r14,r3,0x0
+    3a90:	84 83 00 4c 	l.lwz r4,0x4c(r3)
+    3a94:	bc 04 00 00 	l.sfeqi r4,0x0
+    3a98:	10 00 00 17 	l.bf 3af4 <_reclaim_reent+0x94>
+    3a9c:	9c 40 00 00 	l.addi r2,r0,0x0
+    3aa0:	aa 02 00 00 	l.ori r16,r2,0x0
+    3aa4:	b8 42 00 02 	l.slli r2,r2,0x2
+    3aa8:	e0 44 10 00 	l.add r2,r4,r2
+    3aac:	84 a2 00 00 	l.lwz r5,0x0(r2)
+    3ab0:	bc 05 00 00 	l.sfeqi r5,0x0
+    3ab4:	10 00 00 0a 	l.bf 3adc <_reclaim_reent+0x7c>
+    3ab8:	15 00 00 00 	l.nop 0x0
+    3abc:	a8 85 00 00 	l.ori r4,r5,0x0
+    3ac0:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3ac4:	07 ff ff 09 	l.jal 36e8 <_free_r>
+    3ac8:	84 45 00 00 	l.lwz r2,0x0(r5)
+    3acc:	bc 22 00 00 	l.sfnei r2,0x0
+    3ad0:	13 ff ff fb 	l.bf 3abc <_reclaim_reent+0x5c>
+    3ad4:	a8 a2 00 00 	l.ori r5,r2,0x0
+    3ad8:	84 8e 00 4c 	l.lwz r4,0x4c(r14)
+    3adc:	9e 10 00 01 	l.addi r16,r16,0x1
+    3ae0:	bc 10 00 20 	l.sfeqi r16,0x20
+    3ae4:	0f ff ff f0 	l.bnf 3aa4 <_reclaim_reent+0x44>
+    3ae8:	a8 50 00 00 	l.ori r2,r16,0x0
+    3aec:	07 ff fe ff 	l.jal 36e8 <_free_r>
+    3af0:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3af4:	84 8e 00 40 	l.lwz r4,0x40(r14)
+    3af8:	bc 04 00 00 	l.sfeqi r4,0x0
+    3afc:	10 00 00 04 	l.bf 3b0c <_reclaim_reent+0xac>
+    3b00:	15 00 00 00 	l.nop 0x0
+    3b04:	07 ff fe f9 	l.jal 36e8 <_free_r>
+    3b08:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3b0c:	84 4e 01 48 	l.lwz r2,0x148(r14)
+    3b10:	bc 02 00 00 	l.sfeqi r2,0x0
+    3b14:	10 00 00 0d 	l.bf 3b48 <_reclaim_reent+0xe8>
+    3b18:	15 00 00 00 	l.nop 0x0
+    3b1c:	9e 4e 01 4c 	l.addi r18,r14,0x14c
+    3b20:	e4 02 90 00 	l.sfeq r2,r18
+    3b24:	10 00 00 09 	l.bf 3b48 <_reclaim_reent+0xe8>
+    3b28:	15 00 00 00 	l.nop 0x0
+    3b2c:	a8 82 00 00 	l.ori r4,r2,0x0
+    3b30:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3b34:	07 ff fe ed 	l.jal 36e8 <_free_r>
+    3b38:	86 02 00 00 	l.lwz r16,0x0(r2)
+    3b3c:	e4 32 80 00 	l.sfne r18,r16
+    3b40:	13 ff ff fb 	l.bf 3b2c <_reclaim_reent+0xcc>
+    3b44:	a8 50 00 00 	l.ori r2,r16,0x0
+    3b48:	84 8e 00 54 	l.lwz r4,0x54(r14)
+    3b4c:	bc 04 00 00 	l.sfeqi r4,0x0
+    3b50:	10 00 00 04 	l.bf 3b60 <_reclaim_reent+0x100>
+    3b54:	15 00 00 00 	l.nop 0x0
+    3b58:	07 ff fe e4 	l.jal 36e8 <_free_r>
+    3b5c:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3b60:	84 4e 00 38 	l.lwz r2,0x38(r14)
+    3b64:	bc 02 00 00 	l.sfeqi r2,0x0
+    3b68:	0c 00 00 09 	l.bnf 3b8c <_reclaim_reent+0x12c>
+    3b6c:	15 00 00 00 	l.nop 0x0
+    3b70:	9c 21 00 14 	l.addi r1,r1,0x14
+    3b74:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3b78:	84 41 ff ec 	l.lwz r2,0xffffffec(r1)
+    3b7c:	85 c1 ff f0 	l.lwz r14,0xfffffff0(r1)
+    3b80:	86 01 ff f4 	l.lwz r16,0xfffffff4(r1)
+    3b84:	44 00 48 00 	l.jr r9
+    3b88:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
+    3b8c:	84 4e 00 3c 	l.lwz r2,0x3c(r14)
+    3b90:	48 00 10 00 	l.jalr r2
+    3b94:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3b98:	84 8e 02 e0 	l.lwz r4,0x2e0(r14)
+    3b9c:	bc 04 00 00 	l.sfeqi r4,0x0
+    3ba0:	13 ff ff f4 	l.bf 3b70 <_reclaim_reent+0x110>
+    3ba4:	15 00 00 00 	l.nop 0x0
+    3ba8:	9c 21 00 14 	l.addi r1,r1,0x14
+    3bac:	a8 6e 00 00 	l.ori r3,r14,0x0
+    3bb0:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3bb4:	84 41 ff ec 	l.lwz r2,0xffffffec(r1)
+    3bb8:	85 c1 ff f0 	l.lwz r14,0xfffffff0(r1)
+    3bbc:	86 01 ff f4 	l.lwz r16,0xfffffff4(r1)
+    3bc0:	03 ff ff 96 	l.j 3a18 <cleanup_glue>
+    3bc4:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
+
+00003bc8 <_wrapup_reent>:
+    3bc8:	d7 e1 97 f8 	l.sw 0xfffffff8(r1),r18
+    3bcc:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3bd0:	d7 e1 17 ec 	l.sw 0xffffffec(r1),r2
+    3bd4:	d7 e1 77 f0 	l.sw 0xfffffff0(r1),r14
+    3bd8:	d7 e1 87 f4 	l.sw 0xfffffff4(r1),r16
+    3bdc:	aa 43 00 00 	l.ori r18,r3,0x0
+    3be0:	bc 23 00 00 	l.sfnei r3,0x0
+    3be4:	0c 00 00 29 	l.bnf 3c88 <_wrapup_reent+0xc0>
+    3be8:	9c 21 ff ec 	l.addi r1,r1,0xffffffec
+    3bec:	86 12 01 48 	l.lwz r16,0x148(r18)
+    3bf0:	bc 10 00 00 	l.sfeqi r16,0x0
+    3bf4:	10 00 00 13 	l.bf 3c40 <_wrapup_reent+0x78>
+    3bf8:	15 00 00 00 	l.nop 0x0
+    3bfc:	84 50 00 04 	l.lwz r2,0x4(r16)
+    3c00:	9d c2 ff ff 	l.addi r14,r2,0xffffffff
+    3c04:	bd 8e 00 00 	l.sfltsi r14,0x0
+    3c08:	10 00 00 0a 	l.bf 3c30 <_wrapup_reent+0x68>
+    3c0c:	9c 42 00 01 	l.addi r2,r2,0x1
+    3c10:	b8 42 00 02 	l.slli r2,r2,0x2
+    3c14:	e0 50 10 00 	l.add r2,r16,r2
+    3c18:	84 82 00 00 	l.lwz r4,0x0(r2)
+    3c1c:	48 00 20 00 	l.jalr r4
+    3c20:	9d ce ff ff 	l.addi r14,r14,0xffffffff
+    3c24:	bd 6e 00 00 	l.sfgesi r14,0x0
+    3c28:	13 ff ff fc 	l.bf 3c18 <_wrapup_reent+0x50>
+    3c2c:	9c 42 ff fc 	l.addi r2,r2,0xfffffffc
+    3c30:	86 10 00 00 	l.lwz r16,0x0(r16)
+    3c34:	bc 30 00 00 	l.sfnei r16,0x0
+    3c38:	13 ff ff f1 	l.bf 3bfc <_wrapup_reent+0x34>
+    3c3c:	15 00 00 00 	l.nop 0x0
+    3c40:	84 52 00 3c 	l.lwz r2,0x3c(r18)
+    3c44:	bc 02 00 00 	l.sfeqi r2,0x0
+    3c48:	10 00 00 09 	l.bf 3c6c <_wrapup_reent+0xa4>
+    3c4c:	a8 72 00 00 	l.ori r3,r18,0x0
+    3c50:	9c 21 00 14 	l.addi r1,r1,0x14
+    3c54:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3c58:	85 c1 ff f0 	l.lwz r14,0xfffffff0(r1)
+    3c5c:	86 01 ff f4 	l.lwz r16,0xfffffff4(r1)
+    3c60:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
+    3c64:	44 00 10 00 	l.jr r2
+    3c68:	84 41 ff ec 	l.lwz r2,0xffffffec(r1)
+    3c6c:	9c 21 00 14 	l.addi r1,r1,0x14
+    3c70:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3c74:	84 41 ff ec 	l.lwz r2,0xffffffec(r1)
+    3c78:	85 c1 ff f0 	l.lwz r14,0xfffffff0(r1)
+    3c7c:	86 01 ff f4 	l.lwz r16,0xfffffff4(r1)
+    3c80:	44 00 48 00 	l.jr r9
+    3c84:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
+    3c88:	18 40 00 00 	l.movhi r2,0x0
+    3c8c:	a8 42 60 08 	l.ori r2,r2,0x6008
+    3c90:	03 ff ff d7 	l.j 3bec <_wrapup_reent+0x24>
+    3c94:	86 42 00 00 	l.lwz r18,0x0(r2)
+
+00003c98 <_exit>:
+    3c98:	15 00 00 01 	l.nop 0x1
+    3c9c:	00 00 00 00 	l.j 3c9c <_exit+0x4>
+    3ca0:	15 00 00 00 	l.nop 0x0
+
+00003ca4 <_sbrk>:
+    3ca4:	18 80 00 00 	l.movhi r4,0x0
+    3ca8:	18 a0 00 00 	l.movhi r5,0x0
+    3cac:	a8 84 69 b4 	l.ori r4,r4,0x69b4
+    3cb0:	a8 a5 60 00 	l.ori r5,r5,0x6000
+    3cb4:	85 64 00 00 	l.lwz r11,0x0(r4)
+    3cb8:	84 a5 00 00 	l.lwz r5,0x0(r5)
+    3cbc:	e0 6b 18 00 	l.add r3,r11,r3
+    3cc0:	d7 e1 17 fc 	l.sw 0xfffffffc(r1),r2
+    3cc4:	e0 a5 18 02 	l.sub r5,r5,r3
+    3cc8:	18 40 00 01 	l.movhi r2,0x1
+    3ccc:	e5 a5 10 00 	l.sfles r5,r2
+    3cd0:	0c 00 00 0a 	l.bnf 3cf8 <_sbrk+0x54>
+    3cd4:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    3cd8:	18 60 00 00 	l.movhi r3,0x0
+    3cdc:	9c 80 00 0c 	l.addi r4,r0,0xc
+    3ce0:	a8 63 6a 0c 	l.ori r3,r3,0x6a0c
+    3ce4:	9d 60 ff ff 	l.addi r11,r0,0xffffffff
+    3ce8:	d4 03 20 00 	l.sw 0x0(r3),r4
+    3cec:	9c 21 00 04 	l.addi r1,r1,0x4
+    3cf0:	44 00 48 00 	l.jr r9
+    3cf4:	84 41 ff fc 	l.lwz r2,0xfffffffc(r1)
+    3cf8:	d4 04 18 00 	l.sw 0x0(r4),r3
+    3cfc:	9c 21 00 04 	l.addi r1,r1,0x4
+    3d00:	44 00 48 00 	l.jr r9
+    3d04:	84 41 ff fc 	l.lwz r2,0xfffffffc(r1)
+
+00003d08 <__uart_init>:
+    3d08:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
+    3d0c:	18 40 00 00 	l.movhi r2,0x0
+    3d10:	9c 80 ff c7 	l.addi r4,r0,0xffffffc7
+    3d14:	a8 42 3e 58 	l.ori r2,r2,0x3e58
+    3d18:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3d1c:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3d20:	9c 21 ff f8 	l.addi r1,r1,0xfffffff8
+    3d24:	9c 63 00 02 	l.addi r3,r3,0x2
+    3d28:	d8 03 20 00 	l.sb 0x0(r3),r4
+    3d2c:	9c 80 00 00 	l.addi r4,r0,0x0
+    3d30:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3d34:	9c 63 00 01 	l.addi r3,r3,0x1
+    3d38:	d8 03 20 00 	l.sb 0x0(r3),r4
+    3d3c:	9c 80 00 03 	l.addi r4,r0,0x3
+    3d40:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3d44:	9c 63 00 03 	l.addi r3,r3,0x3
+    3d48:	d8 03 20 00 	l.sb 0x0(r3),r4
+    3d4c:	18 60 00 00 	l.movhi r3,0x0
+    3d50:	a8 63 3e 5c 	l.ori r3,r3,0x3e5c
+    3d54:	84 83 00 00 	l.lwz r4,0x0(r3)
+    3d58:	18 60 00 00 	l.movhi r3,0x0
+    3d5c:	b8 84 00 04 	l.slli r4,r4,0x4
+    3d60:	a8 63 3e 54 	l.ori r3,r3,0x3e54
+    3d64:	04 00 00 40 	l.jal 3e64 <__udivsi3>
+    3d68:	84 63 00 00 	l.lwz r3,0x0(r3)
+    3d6c:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3d70:	a4 8b 00 ff 	l.andi r4,r11,0xff
+    3d74:	9c 63 00 03 	l.addi r3,r3,0x3
+    3d78:	b9 6b 00 88 	l.srai r11,r11,0x8
+    3d7c:	8c a3 00 00 	l.lbz r5,0x0(r3)
+    3d80:	a8 a5 00 80 	l.ori r5,r5,0x80
+    3d84:	a5 6b 00 ff 	l.andi r11,r11,0xff
+    3d88:	d8 03 28 00 	l.sb 0x0(r3),r5
+    3d8c:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3d90:	d8 03 20 00 	l.sb 0x0(r3),r4
+    3d94:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3d98:	9c 63 00 01 	l.addi r3,r3,0x1
+    3d9c:	d8 03 58 00 	l.sb 0x0(r3),r11
+    3da0:	84 42 00 00 	l.lwz r2,0x0(r2)
+    3da4:	9c 42 00 03 	l.addi r2,r2,0x3
+    3da8:	8c 62 00 00 	l.lbz r3,0x0(r2)
+    3dac:	a4 63 00 7f 	l.andi r3,r3,0x7f
+    3db0:	d8 02 18 00 	l.sb 0x0(r2),r3
+    3db4:	9c 21 00 08 	l.addi r1,r1,0x8
+    3db8:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3dbc:	44 00 48 00 	l.jr r9
+    3dc0:	84 41 ff f8 	l.lwz r2,0xfffffff8(r1)
+
+00003dc4 <__uart_putc>:
+    3dc4:	18 a0 00 00 	l.movhi r5,0x0
+    3dc8:	b8 63 00 18 	l.slli r3,r3,0x18
+    3dcc:	a8 a5 3e 58 	l.ori r5,r5,0x3e58
+    3dd0:	84 c5 00 00 	l.lwz r6,0x0(r5)
+    3dd4:	b8 e3 00 98 	l.srai r7,r3,0x18
+    3dd8:	9c 86 00 05 	l.addi r4,r6,0x5
+    3ddc:	8c 64 00 00 	l.lbz r3,0x0(r4)
+    3de0:	a4 63 00 20 	l.andi r3,r3,0x20
+    3de4:	bc 03 00 00 	l.sfeqi r3,0x0
+    3de8:	13 ff ff fd 	l.bf 3ddc <__uart_putc+0x18>
+    3dec:	a4 67 00 ff 	l.andi r3,r7,0xff
+    3df0:	d8 06 18 00 	l.sb 0x0(r6),r3
+    3df4:	84 85 00 00 	l.lwz r4,0x0(r5)
+    3df8:	9c 84 00 05 	l.addi r4,r4,0x5
+    3dfc:	8c 64 00 00 	l.lbz r3,0x0(r4)
+    3e00:	a4 63 00 60 	l.andi r3,r3,0x60
+    3e04:	bc 23 00 60 	l.sfnei r3,0x60
+    3e08:	13 ff ff fd 	l.bf 3dfc <__uart_putc+0x38>
+    3e0c:	15 00 00 00 	l.nop 0x0
+    3e10:	44 00 48 00 	l.jr r9
+    3e14:	15 00 00 00 	l.nop 0x0
+
+00003e18 <__uart_getc>:
+    3e18:	18 60 00 00 	l.movhi r3,0x0
+    3e1c:	a8 63 3e 58 	l.ori r3,r3,0x3e58
+    3e20:	84 a3 00 00 	l.lwz r5,0x0(r3)
+    3e24:	9c 85 00 05 	l.addi r4,r5,0x5
+    3e28:	8c 64 00 00 	l.lbz r3,0x0(r4)
+    3e2c:	a4 63 00 01 	l.andi r3,r3,0x1
+    3e30:	bc 03 00 00 	l.sfeqi r3,0x0
+    3e34:	13 ff ff fd 	l.bf 3e28 <__uart_getc+0x10>
+    3e38:	15 00 00 00 	l.nop 0x0
+    3e3c:	8d 65 00 00 	l.lbz r11,0x0(r5)
+    3e40:	b9 6b 00 18 	l.slli r11,r11,0x18
+    3e44:	44 00 48 00 	l.jr r9
+    3e48:	b9 6b 00 98 	l.srai r11,r11,0x18
+
+00003e4c <_board_mem_base>:
+    3e4c:	00 00 00 00 	l.j 3e4c <_board_mem_base>
+
+00003e50 <_board_mem_size>:
+    3e50:	00 80 00 00 	l.j 2003e50 <_end+0x1ffd440>
+
+00003e54 <_board_clk_freq>:
+    3e54:	02 fa f0 80 	l.j fbec0054 <_end+0xfbeb9644>
+
+00003e58 <_board_uart_base>:
+    3e58:	00 00 00 00 	l.j 3e58 <_board_uart_base>
+
+00003e5c <_board_uart_baud>:
+    3e5c:	00 01 c2 00 	l.j 7465c <_end+0x6dc4c>
+
+00003e60 <_board_uart_IRQ>:
+    3e60:	00 00 00 02 	l.j 3e68 <__udivsi3+0x4>
+
+00003e64 <__udivsi3>:
+    3e64:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    3e68:	d4 01 48 00 	l.sw 0x0(r1),r9
+    3e6c:	9d 60 00 00 	l.addi r11,r0,0x0
+    3e70:	9d 04 00 00 	l.addi r8,r4,0x0
+    3e74:	9c a3 00 00 	l.addi r5,r3,0x0
+    3e78:	e4 28 58 00 	l.sfne r8,r11
+    3e7c:	0c 00 00 36 	l.bnf 3f54 <__udivsi3+0xf0>
+    3e80:	9c e0 00 00 	l.addi r7,r0,0x0
+    3e84:	e4 48 28 00 	l.sfgtu r8,r5
+    3e88:	10 00 00 32 	l.bf 3f50 <__udivsi3+0xec>
+    3e8c:	e4 08 28 00 	l.sfeq r8,r5
+    3e90:	10 00 00 2e 	l.bf 3f48 <__udivsi3+0xe4>
+    3e94:	e4 8b 40 00 	l.sfltu r11,r8
+    3e98:	0c 00 00 0d 	l.bnf 3ecc <__udivsi3+0x68>
+    3e9c:	9d a0 00 20 	l.addi r13,r0,0x20
+    3ea0:	19 20 80 00 	l.movhi r9,0x8000
+    3ea4:	9c c0 ff ff 	l.addi r6,r0,0xffffffff
+    3ea8:	e0 65 48 03 	l.and r3,r5,r9
+    3eac:	b8 87 00 01 	l.slli r4,r7,0x1
+    3eb0:	9d e5 00 00 	l.addi r15,r5,0x0
+    3eb4:	b8 63 00 5f 	l.srli r3,r3,0x1f
+    3eb8:	e1 ad 30 00 	l.add r13,r13,r6
+    3ebc:	e0 e4 18 04 	l.or r7,r4,r3
+    3ec0:	e4 87 40 00 	l.sfltu r7,r8
+    3ec4:	13 ff ff f9 	l.bf 3ea8 <__udivsi3+0x44>
+    3ec8:	b8 a5 00 01 	l.slli r5,r5,0x1
+    3ecc:	b8 e7 00 41 	l.srli r7,r7,0x1
+    3ed0:	9d ad 00 01 	l.addi r13,r13,0x1
+    3ed4:	9d 20 00 00 	l.addi r9,r0,0x0
+    3ed8:	e4 89 68 00 	l.sfltu r9,r13
+    3edc:	0c 00 00 1e 	l.bnf 3f54 <__udivsi3+0xf0>
+    3ee0:	9c af 00 00 	l.addi r5,r15,0x0
+    3ee4:	19 e0 80 00 	l.movhi r15,0x8000
+    3ee8:	9e 20 00 00 	l.addi r17,r0,0x0
+    3eec:	e0 65 78 03 	l.and r3,r5,r15
+    3ef0:	b8 87 00 01 	l.slli r4,r7,0x1
+    3ef4:	b8 63 00 5f 	l.srli r3,r3,0x1f
+    3ef8:	e0 e4 18 04 	l.or r7,r4,r3
+    3efc:	e0 c7 40 02 	l.sub r6,r7,r8
+    3f00:	e0 66 78 03 	l.and r3,r6,r15
+    3f04:	b8 63 00 5f 	l.srli r3,r3,0x1f
+    3f08:	9c 80 00 00 	l.addi r4,r0,0x0
+    3f0c:	e4 23 20 00 	l.sfne r3,r4
+    3f10:	10 00 00 03 	l.bf 3f1c <__udivsi3+0xb8>
+    3f14:	b8 6b 00 01 	l.slli r3,r11,0x1
+    3f18:	9c 80 00 01 	l.addi r4,r0,0x1
+    3f1c:	b8 a5 00 01 	l.slli r5,r5,0x1
+    3f20:	e4 24 88 00 	l.sfne r4,r17
+    3f24:	0c 00 00 03 	l.bnf 3f30 <__udivsi3+0xcc>
+    3f28:	e1 63 20 04 	l.or r11,r3,r4
+    3f2c:	9c e6 00 00 	l.addi r7,r6,0x0
+    3f30:	9d 29 00 01 	l.addi r9,r9,0x1
+    3f34:	e4 89 68 00 	l.sfltu r9,r13
+    3f38:	13 ff ff ed 	l.bf 3eec <__udivsi3+0x88>
+    3f3c:	15 00 00 00 	l.nop 0x0
+    3f40:	00 00 00 05 	l.j 3f54 <__udivsi3+0xf0>
+    3f44:	15 00 00 00 	l.nop 0x0
+    3f48:	00 00 00 03 	l.j 3f54 <__udivsi3+0xf0>
+    3f4c:	9d 60 00 01 	l.addi r11,r0,0x1
+    3f50:	9c e5 00 00 	l.addi r7,r5,0x0
+    3f54:	85 21 00 00 	l.lwz r9,0x0(r1)
+    3f58:	44 00 48 00 	l.jr r9
+    3f5c:	9c 21 00 04 	l.addi r1,r1,0x4
+
+00003f60 <__do_global_ctors_aux>:
+    3f60:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
+    3f64:	18 40 00 00 	l.movhi r2,0x0
+    3f68:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3f6c:	a8 42 5f f0 	l.ori r2,r2,0x5ff0
+    3f70:	84 62 ff fc 	l.lwz r3,0xfffffffc(r2)
+    3f74:	bc 03 ff ff 	l.sfeqi r3,0xffffffff
+    3f78:	10 00 00 09 	l.bf 3f9c <__do_global_ctors_aux+0x3c>
+    3f7c:	9c 21 ff f8 	l.addi r1,r1,0xfffffff8
+    3f80:	9c 42 ff fc 	l.addi r2,r2,0xfffffffc
+    3f84:	48 00 18 00 	l.jalr r3
+    3f88:	9c 42 ff fc 	l.addi r2,r2,0xfffffffc
+    3f8c:	84 62 00 00 	l.lwz r3,0x0(r2)
+    3f90:	bc 23 ff ff 	l.sfnei r3,0xffffffff
+    3f94:	13 ff ff fc 	l.bf 3f84 <__do_global_ctors_aux+0x24>
+    3f98:	15 00 00 00 	l.nop 0x0
+    3f9c:	9c 21 00 08 	l.addi r1,r1,0x8
+    3fa0:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3fa4:	44 00 48 00 	l.jr r9
+    3fa8:	84 41 ff f8 	l.lwz r2,0xfffffff8(r1)
+
+00003fac <call___do_global_ctors_aux>:
+    3fac:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
+    3fb0:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    3fb4:	9c 21 00 04 	l.addi r1,r1,0x4
+    3fb8:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
+    3fbc:	44 00 48 00 	l.jr r9
+    3fc0:	15 00 00 00 	l.nop 0x0
+
+Disassembly of section .fini:
+
+00003fc4 <__fini>:
+    3fc4:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
+    3fc8:	d4 01 48 00 	l.sw 0x0(r1),r9
+    3fcc:	07 ff f8 41 	l.jal 20d0 <__do_global_dtors_aux>
+    3fd0:	15 00 00 00 	l.nop 0x0
+    3fd4:	85 21 00 00 	l.lwz r9,0x0(r1)
+    3fd8:	44 00 48 00 	l.jr r9
+    3fdc:	9c 21 00 04 	l.addi r1,r1,0x4
